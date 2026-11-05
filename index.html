@@ -31,7 +31,6 @@
             line-height: 1.6;
         }
 
-        /* HEADER & NAVIGATION */
         header {
             position: sticky;
             top: 0;
@@ -54,7 +53,6 @@
             gap: 15px;
         }
 
-        /* LOGO */
         .logo-container {
             display: flex;
             align-items: center;
@@ -123,11 +121,10 @@
             text-shadow: 0 0 10px var(--flag-green);
         }
 
-        /* NAV & LANGUAGE SELECTOR */
         .nav-wrap {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
@@ -164,7 +161,6 @@
             font-size: 14px;
         }
 
-        /* SECTIONS */
         section {
             padding: 90px 20px 40px 20px;
             max-width: 1200px;
@@ -184,7 +180,6 @@
             padding-bottom: 5px;
         }
 
-        /* HERO */
         .hero {
             padding: 120px 20px;
             background: linear-gradient(rgba(10, 12, 16, 0.85), rgba(10, 12, 16, 0.95)), 
@@ -199,9 +194,7 @@
             text-transform: uppercase;
         }
 
-        .hero h1 span {
-            color: var(--flag-green);
-        }
+        .hero h1 span { color: var(--flag-green); }
 
         .hero p {
             font-size: 18px;
@@ -231,7 +224,6 @@
         .btn-red { background: var(--flag-red); color: white; }
         .btn-red:hover { background: #b01f1f; }
 
-        /* TIRES */
         .tires-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -244,7 +236,32 @@
             border-radius: 10px;
             padding: 25px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
+        .tire-img-container {
+            width: 100%;
+            height: 220px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #05070a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .tire-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .tire-img-container img:hover { transform: scale(1.05); }
 
         .tire-card h3 {
             font-size: 22px;
@@ -278,7 +295,6 @@
             margin-top: 30px;
         }
 
-        /* TRANSPORT */
         .transport-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -329,7 +345,6 @@
             border-left: 3px solid var(--flag-green);
         }
 
-        /* ABOUT */
         .about-card {
             background: var(--bg-card);
             padding: 30px;
@@ -337,14 +352,7 @@
             border: 1px solid var(--border-color);
         }
 
-        .about-card ul {
-            margin: 15px 0 20px 20px;
-            color: var(--text-muted);
-        }
-
-        .about-card ul li {
-            margin-bottom: 8px;
-        }
+        .about-card p { margin-bottom: 15px; }
 
         .badge-ece {
             margin-top: 20px;
@@ -357,7 +365,6 @@
             font-weight: 700;
         }
 
-        /* CONTACTS */
         .contacts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -371,19 +378,9 @@
             border: 1px solid var(--border-color);
         }
 
-        .contact-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-group h4 {
-            color: var(--flag-green);
-            margin-bottom: 8px;
-        }
-
-        .contact-group a {
-            color: #fff;
-            text-decoration: none;
-        }
+        .contact-group { margin-bottom: 20px; }
+        .contact-group h4 { color: var(--flag-green); margin-bottom: 8px; }
+        .contact-group a { color: #fff; text-decoration: none; }
 
         .qr-card {
             background: #ffffff;
@@ -458,21 +455,36 @@
         </div>
         <div class="tires-grid">
             <div class="tire-card">
-                <h3>Модел DE2</h3>
-                <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5</div>
-                <p data-i18n="tire_de2">Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.</p>
+                <div>
+                    <h3>Модел DE2</h3>
+                    <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5</div>
+                    <div class="tire-img-container">
+                        <img src="De2nova.jpg" alt="Модел DE2">
+                    </div>
+                    <p data-i18n="tire_de2">Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.</p>
+                </div>
                 <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
             </div>
             <div class="tire-card">
-                <h3>Модел DY3</h3>
-                <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5 &nbsp;|&nbsp; 13R22.5</div>
-                <p data-i18n="tire_dy3">Смесен протектор (On/Off Road) за асфалт и строителни обекти.</p>
+                <div>
+                    <h3>Модел DY3</h3>
+                    <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5 &nbsp;|&nbsp; 13R22.5</div>
+                    <div class="tire-img-container">
+                        <img src="DY3nova.jpg" alt="Модел DY3">
+                    </div>
+                    <p data-i18n="tire_dy3">Смесен протектор (On/Off Road) за асфалт и строителни обекти.</p>
+                </div>
                 <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
             </div>
             <div class="tire-card">
-                <h3>Модел LU63</h3>
-                <div class="sizes-badge">385/55R22.5 &nbsp;|&nbsp; 385/65R22.5</div>
-                <p data-i18n="tire_lu63">Протектор за ремаркета с ниско съпротивление и икономия на гориво.</p>
+                <div>
+                    <h3>Модел LU63</h3>
+                    <div class="sizes-badge">385/55R22.5 &nbsp;|&nbsp; 385/65R22.5</div>
+                    <div class="tire-img-container">
+                        <img src="LY63nova.jpg" alt="Модел LU63">
+                    </div>
+                    <p data-i18n="tire_lu63">Протектор за ремаркета с ниско съпротивление и икономия на гориво.</p>
+                </div>
                 <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
             </div>
         </div>
@@ -522,24 +534,17 @@
         </div>
     </section>
 
-    <!-- ТОЧНИЯТ КОРИГИРАН ТЕКСТ В ЗА НАС -->
     <section id="about">
         <div class="section-title">
             <h2 data-i18n="title_about">За Нас</h2>
         </div>
         <div class="about-card">
-            <p data-i18n="about_p1"><strong>ЕН ЕР ДЖИ 3 ЕООД</strong> е основана през 2014 г. и е правоприемник и наследник на компанията <strong>Гуми Нира Транс ЕООД</strong>. Ние работим ръка за ръка с нашите клиенти като един интегриран бизнес партньор.</p>
-            <br>
-            <p data-i18n="about_p2">Ние имаме две бизнес направления:</p>
-            <ul>
-                <li data-i18n="about_dir1"><strong>Гуми Нира Транс ЕООД</strong> – предлагаща транспортни и спедиторски услуги, осъществявайки транспорт до всички дестинации в Европа.</li>
-                <li data-i18n="about_dir2"><strong>ЕН ЕР ДЖИ 3 ЕООД</strong> – предлагаща широк асортимент от изработени регенерирани гуми.</li>
-            </ul>
-            <p data-i18n="about_p3">Когато гумата се износи, собствениците на превозни средства имат избор – да я заменят с нова гума или с регенерирана гума, за да спестят парични средства и да избегнат отпадъка. Регенерираните гуми са щадящи за планетата.</p>
-            <br>
-            <p data-i18n="about_p4">Компанията представя продуктите на <strong>EVERSAFE</strong> от 2012 година и ги използва вече над 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.</p>
+            <p data-i18n="about_p1">Ен Ер Джи 3 ЕООД е основана през 2014 г. и е наследник на компанията Гуми Нира Транс ЕООД. Ние работим ръка за ръка с нашите клиенти като един интегриран бизнес партньор.</p>
+            <p data-i18n="about_p2">Ние имаме две бизнес направления - Гуми Нира Транс ЕООД, предлагаща транспортни и спедиторски услуги, осъществявайки транспорт до всички дестинации в Европа и ЕН ЕР ДЖИ 3 ЕООД, предлагаща широк асортимент от изработени регенерирани гуми.</p>
+            <p data-i18n="about_p3">Когато гумата се износи, собствениците на превозни средства имат избор - да я заменят с нова гума или с регенерирана гума, за да спестят парични средства и да избегнат отпадъка. Регенерираните гуми са щадящи за планетата.</p>
+            <p data-i18n="about_p4">Компанията представя продуктите на EVERSAFE от 2012 година и ги използва от 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.</p>
             
-            <div class="badge-ece"><i class="fa-solid fa-award"></i> <span data-i18n="about_ece">Сертифициран по ECE R109</span></div>
+            <div class="badge-ece"><i class="fa-solid fa-award"></i> <span data-i18n="about_ece">ЕН ЕР ДЖИ 3 ЕООД притежава ECE R109</span></div>
         </div>
     </section>
 
@@ -581,7 +586,6 @@
         <p data-i18n="footer_text">&copy; 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД. Всички права запазени.</p>
     </footer>
 
-    <!-- MULTILANGUAGE JAVASCRIPT WITH ACCURATE TRANSLATIONS -->
     <script>
         const translations = {
             bg: {
@@ -606,13 +610,11 @@
                 why_5_t: "24/7 Поддръжка", why_5_d: "Постоянна връзка с клиента.",
                 why_6_t: "GPS Проследяване", why_6_d: "Контрол в реално време.",
                 title_about: "За Нас",
-                about_p1: "ЕН ЕР ДЖИ 3 ЕООД е основана през 2014 г. и е правоприемник и наследник на компанията Гуми Нира Транс ЕООД. Ние работим ръка за ръка с нашите клиенти като един интегриран бизнес партньор.",
-                about_p2: "Ние имаме две бизнес направления:",
-                about_dir1: "Гуми Нира Транс ЕООД – предлагаща транспортни и спедиторски услуги, осъществявайки транспорт до всички дестинации в Европа.",
-                about_dir2: "ЕН ЕР ДЖИ 3 ЕООД – предлагаща широк асортимент от изработени регенерирани гуми.",
-                about_p3: "Когато гумата се износи, собствениците на превозни средства имат избор – да я заменят с нова гума или с регенерирана гума, за да спестят парични средства и да избегнат отпадъка. Регенерираните гуми са щадящи за планетата.",
-                about_p4: "Компанията представя продуктите на EVERSAFE от 2012 година и ги използва вече над 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.",
-                about_ece: "Сертифициран по ECE R109",
+                about_p1: "Ен Ер Джи 3 ЕООД е основана през 2014 г. и е наследник на компанията Гуми Нира Транс ЕООД. Ние работим ръка за ръка с нашите клиенти както един интегриран бизнес партньор.",
+                about_p2: "Ние имаме две бизнес направления - Гуми Нира Транс ЕООД, предлагаща транспортни и спедиторски услуги, осъществявайки транспорт до всички дестинации в Европа и ЕН ЕР ДЖИ 3 ЕООД, предлагаща широк асортимент от изработени регенерирани гуми.",
+                about_p3: "Когато гумата се износи, собствениците на превозни средства имат избор - да я заменят с нова гума или с регенерирана гума, за да спестят парични средства и да избегнат отпадъка. Регенерираните гуми са щадящи за планетата.",
+                about_p4: "Компанията представя продуктите на EVERSAFE от 2012 година и ги използва от 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.",
+                about_ece: "ЕН ЕР ДЖИ 3 ЕООД притежава ECE R109",
                 title_contacts: "Контакти",
                 cont_trans_h: "Транспорт и Спедиция", cont_tires_h: "Гуми и Регенерат", cont_addr_h: "Адрес",
                 cont_addr_p: "гр. Варна, бул. \"Владислав Варненчик\" 281", cont_time: "Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.",
@@ -640,13 +642,11 @@
                 why_5_t: "24/7 Support", why_5_d: "Constant communication with the client.",
                 why_6_t: "GPS Tracking", why_6_d: "Real-time control.",
                 title_about: "About Us",
-                about_p1: "NRG 3 LTD was founded in 2014 as the natural successor and continuation of Gumi Nira Trans LTD. We work hand in hand with our clients as an integrated business partner.",
-                about_p2: "We operate in two main business directions:",
-                about_dir1: "Gumi Nira Trans LTD – offering transport and forwarding services to all destinations in Europe.",
-                about_dir2: "NRG 3 LTD – offering a wide range of manufactured retreaded tires.",
-                about_p3: "When a tire wears out, vehicle owners face a choice: replace it with a new tire or a retreaded tire to save money and reduce waste. Retreaded tires are eco-friendly and protect our planet.",
-                about_p4: "The company has represented EVERSAFE products since 2012 and has used them for over 9 years. EVERSAFE treads are manufactured in Malaysia, focusing on technological advancement to deliver a high-quality product sold worldwide.",
-                about_ece: "Certified according to ECE R109",
+                about_p1: "NRG 3 LTD was founded in 2014 and is the successor of Gumi Nira Trans LTD. We work hand in hand with our clients as an integrated business partner.",
+                about_p2: "We have two business directions - Gumi Nira Trans LTD, offering transport and forwarding services to all European destinations, and NRG 3 LTD, offering a wide range of manufactured retreaded tires.",
+                about_p3: "When a tire wears out, vehicle owners have a choice - to replace it with a new tire or a retreaded tire to save money and avoid waste. Retreaded tires are eco-friendly.",
+                about_p4: "The company has presented EVERSAFE products since 2012 and has used them for 9 years. EVERSAFE treads are manufactured in Malaysia, focusing on technology to achieve a high-quality product sold worldwide.",
+                about_ece: "NRG 3 LTD holds ECE R109",
                 title_contacts: "Contacts",
                 cont_trans_h: "Transport & Forwarding", cont_tires_h: "Tires & Retreads", cont_addr_h: "Address",
                 cont_addr_p: "Varna, 281 Vladislav Varnenchik Blvd.", cont_time: "Mon - Fri: 08:30 - 17:30 | Sat: 09:00 - 13:00",
@@ -674,13 +674,11 @@
                 why_5_t: "Suport 24/7", why_5_d: "Comunicare permanentă cu clientul.",
                 why_6_t: "Urmărire GPS", why_6_d: "Control în timp real.",
                 title_about: "Despre Noi",
-                about_p1: "NRG 3 SRL a fost înființată în 2014 ca succesor natural al companiei Gumi Nira Trans SRL. Lucrăm mână în mână cu clienții noștri ca un partener de afaceri integrat.",
-                about_p2: "Avem două direcții principale de afaceri:",
-                about_dir1: "Gumi Nira Trans SRL – oferind servicii de transport și expediție către toate destinațiile din Europa.",
-                about_dir2: "NRG 3 SRL – oferind o gamă largă de anvelope resapate de înaltă calitate.",
-                about_p3: "Când o anvelopă se uzează, proprietarii au de ales: să o înlocuiască cu una nouă sau cu una resapată pentru a economisi bani și a evita deșeurile. Anvelopele resapate sunt ecologice.",
-                about_p4: "Compania reprezintă produsele EVERSAFE din 2012 și le folosește de peste 9 ani. Benzile EVERSAFE sunt fabricate în Malaezia cu accent pe tehnologie de vârf.",
-                about_ece: "Certificat conform ECE R109",
+                about_p1: "NRG 3 SRL a fost fondată în 2014 și este succesorul companiei Gumi Nira Trans SRL. Lucrăm mână în mână cu clienții noștri ca partener de afaceri integrat.",
+                about_p2: "Avem două direcții de afaceri - Gumi Nira Trans SRL, care oferă servicii de transport și expediție către toate destinațiile din Europa, și NRG 3 SRL, care oferă o gamă largă de anvelope resapate.",
+                about_p3: "Când o anvelopă se uzează, proprietarii au de ales - să o înlocuiască cu una nouă sau cu una resapată pentru a economisi bani și a evita deșeurile. Anvelopele resapate sunt ecologice.",
+                about_p4: "Compania reprezintă produsele EVERSAFE din 2012 și le folosește de 9 ani. Benzile EVERSAFE sunt fabricate în Malaezia cu tehnologie avansată.",
+                about_ece: "NRG 3 SRL deține ECE R109",
                 title_contacts: "Contact",
                 cont_trans_h: "Transport și Expediție", cont_tires_h: "Anvelope și Resapate", cont_addr_h: "Adresă",
                 cont_addr_p: "Varna, Bd. Vladislav Varnenchik nr. 281", cont_time: "Luni - Vin: 08:30 - 17:30 | Sâm: 09:00 - 13:00",
@@ -708,13 +706,11 @@
                 why_5_t: "24/7 Support", why_5_d: "Ständige Kommunikation mit dem Kunden.",
                 why_6_t: "GPS-Verfolgung", why_6_d: "Echtzeit-Kontrolle.",
                 title_about: "Über Uns",
-                about_p1: "NRG 3 GmbH wurde 2014 als Nachfolger von Gumi Nira Trans GmbH gegründet. Wir arbeiten Hand in Hand mit unseren Kunden als integrierter Geschäftspartner.",
-                about_p2: "Wir haben zwei Geschäftsbereiche:",
-                about_dir1: "Gumi Nira Trans GmbH – bietet Transport- und Speditionsdienstleistungen in ganz Europa an.",
-                about_dir2: "NRG 3 GmbH – bietet eine breite Palette an hochwertigen runderneuerten Reifen an.",
-                about_p3: "Wenn ein Reifen abgefahren ist, haben Fahrzeugbesitzer die Wahl: durch einen neuen oder einen runderneuerten Reifen zu ersetzen, um Geld zu sparen und Abfall zu vermeiden. Runderneuerte Reifen schonen die Umwelt.",
-                about_p4: "Das Unternehmen vertritt EVERSAFE-Produkte seit 2012. Die Laufflächen werden in Malaysia nach höchsten Qualitätsstandards hergestellt.",
-                about_ece: "Zertifiziert nach ECE R109",
+                about_p1: "NRG 3 GmbH wurde 2014 gegründet und ist Nachfolger von Gumi Nira Trans GmbH. Wir arbeiten Hand in Hand mit unseren Kunden.",
+                about_p2: "Wir haben zwei Geschäftsbereiche: Gumi Nira Trans GmbH und NRG 3 GmbH.",
+                about_p3: "Wenn ein Reifen abgefahren ist, können Besitzer ihn durch einen runderneuerten Reifen ersetzen, um Geld zu sparen und Abfall zu vermeiden.",
+                about_p4: "EVERSAFE-Produkte seit 2012 im Sortiment und seit 9 Jahren im Einsatz. Hergestellt in Malaysia.",
+                about_ece: "NRG 3 GmbH besitzt ECE R109",
                 title_contacts: "Kontakt",
                 cont_trans_h: "Transport & Spedition", cont_tires_h: "Reifen & Runderneuerung", cont_addr_h: "Adresse",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Mo - Fr: 08:30 - 17:30 | Sa: 09:00 - 13:00",
@@ -742,13 +738,11 @@
                 why_5_t: "Soporte 24/7", why_5_d: "Comunicación constante con el cliente.",
                 why_6_t: "Seguimiento GPS", why_6_d: "Control en tiempo real.",
                 title_about: "Sobre Nosotros",
-                about_p1: "NRG 3 S.R.L. fue fundada en 2014 como sucesora natural de Gumi Nira Trans S.R.L. Trabajamos mano a mano con nuestros clientes como un socio comercial integrado.",
-                about_p2: "Tenemos dos divisiones comerciales:",
-                about_dir1: "Gumi Nira Trans S.R.L. – ofreciendo servicios de transporte y expedición a toda Europa.",
-                about_dir2: "NRG 3 S.R.L. – ofreciendo una amplia gama de neumáticos recauchutados.",
-                about_p3: "Cuando un neumático se desgasta, el propietario puede reemplazarlo por uno nuevo o recauchutado para ahorrar dinero y reducir residuos. Los neumáticos recauchutados protegen el planeta.",
-                about_p4: "La empresa representa productos EVERSAFE desde 2012. Fabricados en Malasia enfocándose en tecnología de punta.",
-                about_ece: "Certificado ECE R109",
+                about_p1: "NRG 3 S.R.L. fue fundada en 2014 y es sucesora de Gumi Nira Trans S.R.L. Trabajamos mano a mano con nuestros clientes.",
+                about_p2: "Tenemos dos divisiones comerciales: Gumi Nira Trans S.R.L. y NRG 3 S.R.L.",
+                about_p3: "Reemplazar neumáticos desgastados por recauchutados ahorra dinero y protege el planeta.",
+                about_p4: "Representamos productos EVERSAFE desde 2012. Fabricados en Malasia.",
+                about_ece: "NRG 3 S.R.L. posee ECE R109",
                 title_contacts: "Contacto",
                 cont_trans_h: "Transporte y Expedición", cont_tires_h: "Neumáticos y Recauchutados", cont_addr_h: "Dirección",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Vie: 08:30 - 17:30 | Sáb: 09:00 - 13:00",
@@ -776,13 +770,11 @@
                 why_5_t: "Supporto 24/7", why_5_d: "Comunicazione costante con il cliente.",
                 why_6_t: "Tracciamento GPS", why_6_d: "Controllo in tempo reale.",
                 title_about: "Chi Siamo",
-                about_p1: "NRG 3 SRL è stata fondata nel 2014 come successore di Gumi Nira Trans SRL. Lavoriamo a stretto contatto con i clienti come partner integrato.",
-                about_p2: "Abbiamo due settori aziendali:",
-                about_dir1: "Gumi Nira Trans SRL – offre servizi di trasporto e spedizione verso tutta l'Europa.",
-                about_dir2: "NRG 3 SRL – offre un'ampia gamma di pneumatici ricoperti.",
-                about_p3: "Sostituire un pneumatico usurato con uno ricoperto consente di risparmiare e ridurre i rifiuti, salvaguardando l'ambiente.",
-                about_p4: "Rappresentiamo i prodotti EVERSAFE dal 2012. Prodotti in Malaysia con tecnologia all'avanguardia.",
-                about_ece: "Certificato ECE R109",
+                about_p1: "NRG 3 SRL è stata fondata nel 2014 ed è il successore di Gumi Nira Trans SRL.",
+                about_p2: "Abbiamo due settori: Gumi Nira Trans SRL e NRG 3 SRL.",
+                about_p3: "Sostituire pneumatici usurati con ricoperti risparmia denaro e riduce i rifiuti.",
+                about_p4: "Prodotti EVERSAFE dal 2012, prodotti in Malaysia.",
+                about_ece: "NRG 3 SRL possiede ECE R109",
                 title_contacts: "Contatti",
                 cont_trans_h: "Trasporti e Spedizioni", cont_tires_h: "Pneumatici e Ricoperti", cont_addr_h: "Indirizzo",
                 cont_addr_p: "Varna, Viale Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sab: 09:00 - 13:00",
@@ -810,13 +802,11 @@
                 why_5_t: "Support 24/7", why_5_d: "Communication constante avec le client.",
                 why_6_t: "Suivi GPS", why_6_d: "Contrôle en temps réel.",
                 title_about: "À Propos",
-                about_p1: "NRG 3 SARL a été fondée en 2014 en tant que successeur de Gumi Nira Trans SARL. Nous travaillons main dans la main avec nos clients.",
-                about_p2: "Nous avons deux domaines d'activité :",
-                about_dir1: "Gumi Nira Trans SARL – services de transport et d'affrètement à travers l'Europe.",
-                about_dir2: "NRG 3 SARL – large gamme de pneus rechapés.",
-                about_p3: "Remplacer un pneu usé par un pneu rechapé permet d'économiser de l'argent et de réduire les déchets pour préserver la planète.",
-                about_p4: "Partenaire EVERSAFE depuis 2012. Fabriqué en Malaisie avec des technologies avancées.",
-                about_ece: "Certifié ECE R109",
+                about_p1: "NRG 3 SARL a été fondée en 2014 et est le successeur de Gumi Nira Trans SARL.",
+                about_p2: "Nous avons deux secteurs d'activité : Gumi Nira Trans SARL et NRG 3 SARL.",
+                about_p3: "Remplacer des pneus usés par des pneus rechapés économise de l'argent et évite les déchets.",
+                about_p4: "Produits EVERSAFE depuis 2012, fabriqués en Malaisie.",
+                about_ece: "NRG 3 SARL détient ECE R109",
                 title_contacts: "Contacts",
                 cont_trans_h: "Transport et Affrètement", cont_tires_h: "Pneus et Rechapés", cont_addr_h: "Adresse",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sam: 09:00 - 13:00",
@@ -844,13 +834,11 @@
                 why_5_t: "24/7 Podrška", why_5_d: "Stalna komunikacija s klijentom.",
                 why_6_t: "GPS Praćenje", why_6_d: "Kontrola u stvarnom vremenu.",
                 title_about: "O Nama",
-                about_p1: "NRG 3 d.o.o. osnovan je 2014. kao sljedbenik Gumi Nira Trans d.o.o. Radimo ruku pod ruku s klijentima.",
-                about_p2: "Imamo dva poslovna smjera:",
-                about_dir1: "Gumi Nira Trans d.o.o. – transportne i špediterske usluge diljem Europe.",
-                about_dir2: "NRG 3 d.o.o. – širok asortiman obnovljenih guma.",
-                about_p3: "Zamjena istrošene gume obnovljenom štedi novac i smanjuje otpad te čuva planet.",
-                about_p4: "Zastupamo EVERSAFE proizvode od 2012. Proizvedene u Maleziji s naglaskom na kvalitetu.",
-                about_ece: "Certifikacija ECE R109",
+                about_p1: "NRG 3 d.o.o. osnovan je 2014. godine i nasljednik je tvrtke Gumi Nira Trans d.o.o.",
+                about_p2: "Imamo dva poslovna smjera: Gumi Nira Trans d.o.o. i NRG 3 d.o.o.",
+                about_p3: "Zamjena istrošenih guma obnovljenima štedi novac i smanjuje otpad.",
+                about_p4: "EVERSAFE proizvodi od 2012. godine, proizvedeni u Maleziji.",
+                about_ece: "NRG 3 d.o.o. posjeduje ECE R109",
                 title_contacts: "Kontakti",
                 cont_trans_h: "Transport i Otpremništvo", cont_tires_h: "Gume i Obnova", cont_addr_h: "Adresa",
                 cont_addr_p: "Varna, Bulevar Vladislav Varnenchik 281", cont_time: "Pon - Pet: 08:30 - 17:30 | Sub: 09:00 - 13:00",
@@ -878,13 +866,11 @@
                 why_5_t: "24/7 Támogatás", why_5_d: "Folyamatos kapcsolat az ügyféllel.",
                 why_6_t: "GPS Követés", why_6_d: "Valós idejű ellenőrzés.",
                 title_about: "Rólunk",
-                about_p1: "Az NRG 3 Kft. 2014-ben alakult a Gumi Nira Trans Kft. utódjaként. Integrált üzleti partnerként dolgozunk együtt ügyfeleinkkel.",
-                about_p2: "Két fő üzletágunk van:",
-                about_dir1: "Gumi Nira Trans Kft. – szállítási és spedíciós szolgáltatások Európa-szerte.",
-                about_dir2: "NRG 3 Kft. – futózott gumiabroncsok széles választéka.",
-                about_p3: "Az elhasznált abroncsok futózottra cserélése pénzt takarít meg és csökkenti a hulladékot, védve a bolygót.",
-                about_p4: "2012 óta képviseljük az EVERSAFE termékeket. Malajziában készülnek kiváló minőségben.",
-                about_ece: "ECE R109 tanúsítvány",
+                about_p1: "Az NRG 3 Kft. 2014-ben alakult a Gumi Nira Trans Kft. utódjaként.",
+                about_p2: "Két fő üzletágunk van: Gumi Nira Trans Kft. és NRG 3 Kft.",
+                about_p3: "Az elhasznált abroncsok futózottra cserélése pénzt takarít meg és csökkenti a hulladékot.",
+                about_p4: "2012 óta képviseljük az EVERSAFE termékeket. Malajziában készülnek.",
+                about_ece: "NRG 3 Kft. ECE R109 tanúsítvánnyal rendelkezik",
                 title_contacts: "Kapcsolat",
                 cont_trans_h: "Szállítás és Spedíció", cont_tires_h: "Gumiabroncsok és Futózás", cont_addr_h: "Cím",
                 cont_addr_p: "Várna, Vladislav Varnenchik sugárút 281.", cont_time: "Hét - Pén: 08:30 - 17:30 | Szo: 09:00 - 13:00",
