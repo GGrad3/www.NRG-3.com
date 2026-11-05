@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ен Ер Джи 3 ЕООД & Гуми Нира Транс - Регенерат & Транспорт</title>
+    <title>Ен Ер Джи 3 ЕООД & Гуми Нира Транс</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -13,7 +13,7 @@
             --text-muted: #94a3b8;
             --flag-green: #00966e;
             --flag-red: #d62828;
-            --accent-green-glow: rgba(0, 150, 110, 0.4);
+            --accent-glow: rgba(0, 150, 110, 0.5);
             --border-color: #2d3748;
         }
 
@@ -22,6 +22,9 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
@@ -39,7 +42,7 @@
             background: #0a0c10;
             z-index: 1000;
             border-bottom: 2px solid var(--border-color);
-            padding: 15px 0;
+            padding: 10px 0;
         }
 
         .header-container {
@@ -50,42 +53,87 @@
             align-items: center;
             padding: 0 20px;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
+        /* EXACT LOGO MATCHING YOUR IMAGE */
         .logo-container {
             display: flex;
             align-items: center;
             text-decoration: none;
-            gap: 12px;
+            gap: 15px;
         }
 
-        .flag-box {
-            display: flex;
-            flex-direction: column;
-            width: 35px;
-            height: 24px;
-            border-radius: 3px;
-            overflow: hidden;
-            box-shadow: 0 0 10px var(--accent-green-glow);
+        .custom-logo-wrapper {
+            position: relative;
+            width: 110px;
+            height: 55px;
         }
 
-        .flag-stripe { flex: 1; }
-        .stripe-white { background: #ffffff; }
-        .stripe-green { background: var(--flag-green); }
-        .stripe-red { background: var(--flag-red); }
+        .logo-box-white {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 60px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid #111;
+            box-shadow: 0 0 10px var(--accent-glow);
+            z-index: 1;
+        }
 
-        .logo-title {
-            font-size: 24px;
+        .logo-box-green {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            width: 45px;
+            height: 22px;
+            background: var(--flag-green);
+            box-shadow: 0 0 10px var(--accent-glow);
+            z-index: 2;
+        }
+
+        .logo-box-red {
+            position: absolute;
+            top: 15px;
+            left: 35px;
+            width: 50px;
+            height: 22px;
+            background: var(--flag-red);
+            box-shadow: 0 0 10px var(--accent-glow);
+            z-index: 3;
+        }
+
+        .logo-reflection {
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            font-size: 13px;
             font-weight: 900;
             letter-spacing: 2px;
+            color: rgba(0, 150, 110, 0.25);
+            transform: scaleY(-1);
+            z-index: 0;
+            user-select: none;
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main-text {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 3px;
             color: #ffffff;
-            text-shadow: 0 0 10px var(--flag-green);
+            text-shadow: 0 0 12px var(--flag-green), 0 0 20px rgba(0, 150, 110, 0.5);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
@@ -94,7 +142,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            padding: 8px 12px;
+            padding: 8px 14px;
             border-radius: 6px;
             transition: 0.3s;
         }
@@ -107,13 +155,13 @@
         /* HERO SECTION */
         .hero {
             padding: 100px 20px;
-            background: linear-gradient(rgba(10, 12, 16, 0.8), rgba(10, 12, 16, 0.95)), 
+            background: linear-gradient(rgba(10, 12, 16, 0.85), rgba(10, 12, 16, 0.95)), 
                         url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 40px;
             font-weight: 800;
             margin-bottom: 20px;
             text-transform: uppercase;
@@ -153,7 +201,7 @@
 
         /* SECTIONS */
         section {
-            padding: 70px 20px;
+            padding: 80px 20px 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -164,7 +212,7 @@
         }
 
         .section-title h2 {
-            font-size: 32px;
+            font-size: 30px;
             text-transform: uppercase;
             border-bottom: 3px solid var(--flag-green);
             display: inline-block;
@@ -340,13 +388,16 @@
 
     <header>
         <div class="header-container">
-            <a href="#" class="logo-container">
-                <div class="flag-box">
-                    <div class="flag-stripe stripe-white"></div>
-                    <div class="flag-stripe stripe-green"></div>
-                    <div class="flag-stripe stripe-red"></div>
+            <a href="#home" class="logo-container">
+                <div class="custom-logo-wrapper">
+                    <div class="logo-box-white"></div>
+                    <div class="logo-box-green"></div>
+                    <div class="logo-box-red"></div>
+                    <div class="logo-reflection">NRG3</div>
                 </div>
-                <span class="logo-title">NRG3</span>
+                <div class="logo-text-group">
+                    <span class="logo-main-text">NRG3</span>
+                </div>
             </a>
             <nav>
                 <ul>
@@ -374,4 +425,120 @@
             <h2>Гуми Регенерат</h2>
         </div>
         <div class="tires-grid">
-            <div class="tire-
+            <div class="tire-card">
+                <h3>Модел DE2</h3>
+                <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5</div>
+                <p>Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.</p>
+                <a href="#contacts" class="btn btn-green">Запитване</a>
+            </div>
+            <div class="tire-card">
+                <h3>Модел DY3</h3>
+                <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5 &nbsp;|&nbsp; 13R22.5</div>
+                <p>Смесен протектор (On/Off Road) за асфалт и строителни обекти.</p>
+                <a href="#contacts" class="btn btn-green">Запитване</a>
+            </div>
+            <div class="tire-card">
+                <h3>Модел LU63</h3>
+                <div class="sizes-badge">385/55R22.5 &nbsp;|&nbsp; 385/65R22.5</div>
+                <p>Протектор за ремаркета с ниско съпротивление и икономия на гориво.</p>
+                <a href="#contacts" class="btn btn-green">Запитване</a>
+            </div>
+        </div>
+
+        <div class="info-notice">
+            <h4><i class="fa-solid fa-circle-info" style="color:var(--flag-green);"></i> Търсите друг размер?</h4>
+            <p style="color:var(--text-muted);">Посочените модели са най-разпространените. ЕН ЕР ДЖИ 3 ЕООД произвежда и предлага много други шарки и размери при запитване.</p>
+        </div>
+    </section>
+
+    <section id="transport">
+        <div class="section-title">
+            <h2>Транспорт и Спедиция</h2>
+        </div>
+        <div class="transport-grid">
+            <div class="transport-card">
+                <i class="fa-solid fa-truck-front"></i>
+                <h3>Комплектни товари (FTL)</h3>
+                <p>Бърз и директен международен транспорт на цели товари в Европа.</p>
+            </div>
+            <div class="transport-card">
+                <i class="fa-solid fa-boxes-packing"></i>
+                <h3>Групажни товари (LTL)</h3>
+                <p>Икономични и гъвкави решения за редовни по-малки пратки.</p>
+            </div>
+        </div>
+
+        <h3 style="text-align:center; margin-bottom:15px;">Обслужвани релации</h3>
+        <div class="countries-grid">
+            <div class="country-box">🇧🇬 България</div>
+            <div class="country-box">🇷🇴 Румъния</div>
+            <div class="country-box">🇩🇪 Германия</div>
+            <div class="country-box">🇪🇸 Испания</div>
+            <div class="country-box">🇮🇹 Италия</div>
+            <div class="country-box">🇫🇷 Франция</div>
+            <div class="country-box">🇭🇷 Хърватия</div>
+            <div class="country-box">🇭🇺 Унгария</div>
+        </div>
+
+        <div class="why-us-grid">
+            <div class="why-us-item"><strong>Модерен автопарк</strong> - Екологични и поддържани камиони.</div>
+            <div class="why-us-item"><strong>Опитен екип</strong> - Професионални шофьори и спедитори.</div>
+            <div class="why-us-item"><strong>Гъвкави решения</strong> - Персонализиран подход.</div>
+            <div class="why-us-item"><strong>Конкурентни цени</strong> - Оптимално съотношение цена/качество.</div>
+            <div class="why-us-item"><strong>24/7 Поддръжка</strong> - Постоянна връзка с клиента.</div>
+            <div class="why-us-item"><strong>GPS Проследяване</strong> - Контрол в реално време.</div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>За Нас</h2>
+        </div>
+        <div class="about-card">
+            <p><strong>ЕН ЕР ДЖИ 3 ЕООД</strong> е основана през 2014 г. и е наследник на компанията <strong>Гуми Нира Транс ЕООД</strong>. Имаме две бизнес направления: транспорт и спедиция в цяла Европа, както и производство на широка гама регенерирани гуми.</p>
+            <br>
+            <p>Представяме продуктите на <strong>EVERSAFE</strong> от 2012 г. (произведени в Малайзия с най-високо качество).</p>
+            <div class="badge-ece"><i class="fa-solid fa-award"></i> Сертифициран по ECE R109</div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="section-title">
+            <h2>Контакти</h2>
+        </div>
+        <div class="contacts-grid">
+            <div class="contact-box">
+                <div class="contact-group">
+                    <h4><i class="fa-solid fa-truck"></i> Транспорт и Спедиция</h4>
+                    <p>Тел: <a href="tel:0899999950">0899 99 99 50</a></p>
+                    <p>Имейл: <a href="mailto:gumi_nira_trans@abv.bg">gumi_nira_trans@abv.bg</a></p>
+                </div>
+                <div class="contact-group">
+                    <h4><i class="fa-solid fa-circle-notch"></i> Гуми и Регенерат</h4>
+                    <p>Тел: <a href="tel:0887785860">0887 78 58 60</a> | <a href="tel:0884112356">0884 11 23 56</a></p>
+                    <p>Имейл: <a href="mailto:nrg_3@abv.bg">nrg_3@abv.bg</a></p>
+                </div>
+                <div class="contact-group">
+                    <h4><i class="fa-solid fa-location-dot"></i> Адрес</h4>
+                    <p>гр. Варна, бул. "Владислав Варненчик" 281</p>
+                    <p style="font-size:12px; color:var(--text-muted);">Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.</p>
+                </div>
+            </div>
+
+            <div class="contact-box" style="text-align:center;">
+                <h4 style="margin-bottom:15px;">WhatsApp Чат</h4>
+                <div class="qr-card">
+                    <h5 style="font-size:16px;">Gumi Nira Trans</h5>
+                    <p style="font-size:12px; color:#666; margin-bottom:10px;">WhatsApp Business</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/359899999950" alt="WhatsApp QR">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД.</p>
+    </footer>
+
+</body>
+</html>
