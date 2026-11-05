@@ -54,7 +54,7 @@
             gap: 15px;
         }
 
-        /* EXACT LOGO FROM USER IMAGE */
+        /* LOGO */
         .logo-container {
             display: flex;
             align-items: center;
@@ -123,6 +123,14 @@
             text-shadow: 0 0 10px var(--flag-green);
         }
 
+        /* NAV & LANGUAGE SELECTOR */
+        .nav-wrap {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -145,7 +153,18 @@
             color: #fff;
         }
 
-        /* SECTIONS COMMON */
+        .lang-selector {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* SECTIONS */
         section {
             padding: 90px 20px 40px 20px;
             max-width: 1200px;
@@ -165,13 +184,12 @@
             padding-bottom: 5px;
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
             padding: 120px 20px;
             background: linear-gradient(rgba(10, 12, 16, 0.85), rgba(10, 12, 16, 0.95)), 
                         url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
             text-align: center;
-            margin-top: 0;
         }
 
         .hero h1 {
@@ -213,7 +231,7 @@
         .btn-red { background: var(--flag-red); color: white; }
         .btn-red:hover { background: #b01f1f; }
 
-        /* TIRES SECTION */
+        /* TIRES */
         .tires-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -260,7 +278,7 @@
             margin-top: 30px;
         }
 
-        /* TRANSPORT SECTION */
+        /* TRANSPORT */
         .transport-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -311,7 +329,7 @@
             border-left: 3px solid var(--flag-green);
         }
 
-        /* ABOUT SECTION */
+        /* ABOUT */
         .about-card {
             background: var(--bg-card);
             padding: 30px;
@@ -330,7 +348,7 @@
             font-weight: 700;
         }
 
-        /* CONTACTS SECTION */
+        /* CONTACTS */
         .contacts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -391,134 +409,148 @@
                 </div>
                 <span class="logo-main-text">NRG3</span>
             </a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Начало</a></li>
-                    <li><a href="#tires">Гуми регенерат</a></li>
-                    <li><a href="#transport">Транспорт и спедиция</a></li>
-                    <li><a href="#about">За Нас</a></li>
-                    <li><a href="#contacts">Контакти</a></li>
-                </ul>
-            </nav>
+            <div class="nav-wrap">
+                <nav>
+                    <ul>
+                        <li><a href="#home" data-i18n="nav_home">Начало</a></li>
+                        <li><a href="#tires" data-i18n="nav_tires">Гуми регенерат</a></li>
+                        <li><a href="#transport" data-i18n="nav_transport">Транспорт и спедиция</a></li>
+                        <li><a href="#about" data-i18n="nav_about">За Нас</a></li>
+                        <li><a href="#contacts" data-i18n="nav_contacts">Контакти</a></li>
+                    </ul>
+                </nav>
+                <select id="langSelect" class="lang-selector" onchange="changeLanguage(this.value)">
+                    <option value="bg">🇧🇬 Български</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ro">🇷🇴 Română</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="it">🇮🇹 Italiano</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="hr">🇭🇷 Hrvatski</option>
+                    <option value="hu">🇭🇺 Magyar</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <section id="home" class="hero">
-        <h1>Качество и Надеждност с <span>NRG3</span></h1>
-        <p>Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.</p>
+        <h1 data-i18n="hero_title">Качество и Надеждност с <span>NRG3</span></h1>
+        <p data-i18n="hero_desc">Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.</p>
         <div class="btn-group">
-            <a href="#tires" class="btn btn-green">Гуми Регенерат</a>
-            <a href="#contacts" class="btn btn-red">Свържи се с нас</a>
+            <a href="#tires" class="btn btn-green" data-i18n="btn_tires">Гуми Регенерат</a>
+            <a href="#contacts" class="btn btn-red" data-i18n="btn_contact">Свържи се с нас</a>
         </div>
     </section>
 
     <section id="tires">
         <div class="section-title">
-            <h2>Гуми Регенерат</h2>
+            <h2 data-i18n="title_tires">Гуми Регенерат</h2>
         </div>
         <div class="tires-grid">
             <div class="tire-card">
                 <h3>Модел DE2</h3>
                 <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5</div>
-                <p>Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.</p>
-                <a href="#contacts" class="btn btn-green">Запитване</a>
+                <p data-i18n="tire_de2">Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.</p>
+                <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
             </div>
             <div class="tire-card">
                 <h3>Модел DY3</h3>
                 <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5 &nbsp;|&nbsp; 13R22.5</div>
-                <p>Смесен протектор (On/Off Road) за асфалт и строителни обекти.</p>
-                <a href="#contacts" class="btn btn-green">Запитване</a>
+                <p data-i18n="tire_dy3">Смесен протектор (On/Off Road) за асфалт и строителни обекти.</p>
+                <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
             </div>
             <div class="tire-card">
                 <h3>Модел LU63</h3>
                 <div class="sizes-badge">385/55R22.5 &nbsp;|&nbsp; 385/65R22.5</div>
-                <p>Протектор за ремаркета с ниско съпротивление и икономия на гориво.</p>
-                <a href="#contacts" class="btn btn-green">Запитване</a>
+                <p data-i18n="tire_lu63">Протектор за ремаркета с ниско съпротивление и икономия на гориво.</p>
+                <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
             </div>
         </div>
 
         <div class="info-notice">
-            <h4><i class="fa-solid fa-circle-info" style="color:var(--flag-green);"></i> Търсите друг размер?</h4>
-            <p style="color:var(--text-muted);">Посочените модели са най-разпространените. ЕН ЕР ДЖИ 3 ЕООД произвежда и предлага много други шарки и размери при запитване.</p>
+            <h4 data-i18n="notice_title"><i class="fa-solid fa-circle-info" style="color:var(--flag-green);"></i> Търсите друг размер?</h4>
+            <p style="color:var(--text-muted);" data-i18n="notice_desc">Посочените модели са най-разпространените. ЕН ЕР ДЖИ 3 ЕООД произвежда и предлага много други шарки и размери при запитване.</p>
         </div>
     </section>
 
     <section id="transport">
         <div class="section-title">
-            <h2>Транспорт и Спедиция</h2>
+            <h2 data-i18n="title_transport">Транспорт и Спедиция</h2>
         </div>
         <div class="transport-grid">
             <div class="transport-card">
                 <i class="fa-solid fa-truck-front"></i>
-                <h3>Комплектни товари (FTL)</h3>
-                <p>Бърз и директен международен транспорт на цели товари в Европа.</p>
+                <h3 data-i18n="trans_ftl_title">Комплектни товари (FTL)</h3>
+                <p data-i18n="trans_ftl_desc">Бърз и директен международен транспорт на цели товари в Европа.</p>
             </div>
             <div class="transport-card">
                 <i class="fa-solid fa-boxes-packing"></i>
-                <h3>Групажни товари (LTL)</h3>
-                <p>Икономични и гъвкави решения за редовни по-малки пратки.</p>
+                <h3 data-i18n="trans_ltl_title">Групажни товари (LTL)</h3>
+                <p data-i18n="trans_ltl_desc">Икономични и гъвкави решения за редовни по-малки пратки.</p>
             </div>
         </div>
 
-        <h3 style="text-align:center; margin-bottom:15px;">Обслужвани релации</h3>
+        <h3 style="text-align:center; margin-bottom:15px;" data-i18n="relations_title">Обслужвани релации</h3>
         <div class="countries-grid">
-            <div class="country-box">🇧🇬 България</div>
-            <div class="country-box">🇷🇴 Румъния</div>
-            <div class="country-box">🇩🇪 Германия</div>
-            <div class="country-box">🇪🇸 Испания</div>
-            <div class="country-box">🇮🇹 Италия</div>
-            <div class="country-box">🇫🇷 Франция</div>
-            <div class="country-box">🇭🇷 Хърватия</div>
-            <div class="country-box">🇭🇺 Унгария</div>
+            <div class="country-box">🇧🇬 <span data-i18n="c_bg">България</span></div>
+            <div class="country-box">🇷🇴 <span data-i18n="c_ro">Румъния</span></div>
+            <div class="country-box">🇩🇪 <span data-i18n="c_de">Германия</span></div>
+            <div class="country-box">🇪🇸 <span data-i18n="c_es">Испания</span></div>
+            <div class="country-box">🇮🇹 <span data-i18n="c_it">Италия</span></div>
+            <div class="country-box">🇫🇷 <span data-i18n="c_fr">Франция</span></div>
+            <div class="country-box">🇭🇷 <span data-i18n="c_hr">Хърватия</span></div>
+            <div class="country-box">🇭🇺 <span data-i18n="c_hu">Унгария</span></div>
         </div>
 
         <div class="why-us-grid">
-            <div class="why-us-item"><strong>Модерен автопарк</strong> - Екологични и поддържани камиони.</div>
-            <div class="why-us-item"><strong>Опитен екип</strong> - Професионални шофьори и спедитори.</div>
-            <div class="why-us-item"><strong>Гъвкави решения</strong> - Персонализиран подход.</div>
-            <div class="why-us-item"><strong>Конкурентни цени</strong> - Оптимално съотношение цена/качество.</div>
-            <div class="why-us-item"><strong>24/7 Поддръжка</strong> - Постоянна връзка с клиента.</div>
-            <div class="why-us-item"><strong>GPS Проследяване</strong> - Контрол в реално време.</div>
+            <div class="why-us-item"><strong data-i18n="why_1_t">Модерен автопарк</strong> - <span data-i18n="why_1_d">Екологични и поддържани камиони.</span></div>
+            <div class="why-us-item"><strong data-i18n="why_2_t">Опитен екип</strong> - <span data-i18n="why_2_d">Професионални шофьори и спедитори.</span></div>
+            <div class="why-us-item"><strong data-i18n="why_3_t">Гъвкави решения</strong> - <span data-i18n="why_3_d">Персонализиран подход.</span></div>
+            <div class="why-us-item"><strong data-i18n="why_4_t">Конкурентни цени</strong> - <span data-i18n="why_4_d">Оптимално съотношение цена/качество.</span></div>
+            <div class="why-us-item"><strong data-i18n="why_5_t">24/7 Поддръжка</strong> - <span data-i18n="why_5_d">Постоянна връзка с клиента.</span></div>
+            <div class="why-us-item"><strong data-i18n="why_6_t">GPS Проследяване</strong> - <span data-i18n="why_6_d">Контрол в реално време.</span></div>
         </div>
     </section>
 
+    <!-- ПОДОБРЕНАТА СЕКЦИЯ "ЗА НАС" -->
     <section id="about">
         <div class="section-title">
-            <h2>За Нас</h2>
+            <h2 data-i18n="title_about">За Нас</h2>
         </div>
         <div class="about-card">
-            <p><strong>ЕН ЕР ДЖИ 3 ЕООД</strong> е основана през 2014 г. и е наследник на компанията <strong>Гуми Нира Транс ЕООД</strong>. Имаме две бизнес направления: транспорт и спедиция в цяла Европа, както и производство на широка гама регенерирани гуми.</p>
+            <p data-i18n="about_p1"><strong>ЕН ЕР ДЖИ 3 ЕООД</strong> е утвърдена компания с дългогодишен опит в транспортния бранш, създадена като естествен продължител и наследник на <strong>Гуми Нира Транс ЕООД</strong>. Ние изграждаме дългосрочни и коректни партньорски отношения, като предлагаме комплекс от надеждни решения за Вашия бизнес в две основни направления: международен транспорт и спедиция в цяла Европа, както и дистрибуция на висококачествени регенерирани гуми.</p>
             <br>
-            <p>Представяме продуктите на <strong>EVERSAFE</strong> от 2012 г. (произведени в Малайзия с най-високо качество).</p>
-            <div class="badge-ece"><i class="fa-solid fa-award"></i> Сертифициран по ECE R109</div>
+            <p data-i18n="about_p2">Компанията е официален и дългогодишен представител на световноизкачащата марка <strong>EVERSAFE</strong>. Протекторите се произвеждат в Малайзия по най-високи технологични стандарти, гарантиращи безопасност, издръжливост и икономичност при тежки експлоатационни условия.</p>
+            <div class="badge-ece"><i class="fa-solid fa-award"></i> <span data-i18n="about_ece">Официален европейски сертификат ECE R109</span></div>
         </div>
     </section>
 
     <section id="contacts">
         <div class="section-title">
-            <h2>Контакти</h2>
+            <h2 data-i18n="title_contacts">Контакти</h2>
         </div>
         <div class="contacts-grid">
             <div class="contact-box">
                 <div class="contact-group">
-                    <h4><i class="fa-solid fa-truck"></i> Транспорт и Спедиция</h4>
+                    <h4 data-i18n="cont_trans_h"><i class="fa-solid fa-truck"></i> Транспорт и Спедиция</h4>
                     <p>Тел: <a href="tel:0899999950">0899 99 99 50</a></p>
                     <p>Имейл: <a href="mailto:gumi_nira_trans@abv.bg">gumi_nira_trans@abv.bg</a></p>
                 </div>
                 <div class="contact-group">
-                    <h4><i class="fa-solid fa-circle-notch"></i> Гуми и Регенерат</h4>
+                    <h4 data-i18n="cont_tires_h"><i class="fa-solid fa-circle-notch"></i> Гуми и Регенерат</h4>
                     <p>Тел: <a href="tel:0887785860">0887 78 58 60</a> | <a href="tel:0884112356">0884 11 23 56</a></p>
                     <p>Имейл: <a href="mailto:nrg_3@abv.bg">nrg_3@abv.bg</a></p>
                 </div>
                 <div class="contact-group">
-                    <h4><i class="fa-solid fa-location-dot"></i> Адрес</h4>
-                    <p>гр. Варна, бул. "Владислав Варненчик" 281</p>
-                    <p style="font-size:12px; color:var(--text-muted);">Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.</p>
+                    <h4 data-i18n="cont_addr_h"><i class="fa-solid fa-location-dot"></i> Адрес</h4>
+                    <p data-i18n="cont_addr_p">гр. Варна, бул. "Владислав Варненчик" 281</p>
+                    <p style="font-size:12px; color:var(--text-muted);" data-i18n="cont_time">Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.</p>
                 </div>
             </div>
 
             <div class="contact-box" style="text-align:center;">
-                <h4 style="margin-bottom:15px;">WhatsApp Чат</h4>
+                <h4 style="margin-bottom:15px;" data-i18n="whatsapp_title">WhatsApp Чат</h4>
                 <div class="qr-card">
                     <h5 style="font-size:16px;">Gumi Nira Trans</h5>
                     <p style="font-size:12px; color:#666; margin-bottom:10px;">WhatsApp Business</p>
@@ -529,8 +561,300 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД.</p>
+        <p data-i18n="footer_text">&copy; 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД. Всички права запазени.</p>
     </footer>
 
+    <!-- MULTILANGUAGE JAVASCRIPT -->
+    <script>
+        const translations = {
+            bg: {
+                nav_home: "Начало", nav_tires: "Гуми регенерат", nav_transport: "Транспорт и спедиция", nav_about: "За Нас", nav_contacts: "Контакти",
+                hero_title: "Качество и Надеждност с NRG3", hero_desc: "Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.",
+                btn_tires: "Гуми Регенерат", btn_contact: "Свържи се с нас",
+                title_tires: "Гуми Регенерат",
+                tire_de2: "Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.",
+                tire_dy3: "Смесен протектор (On/Off Road) за асфалт и строителни обекти.",
+                tire_lu63: "Протектор за ремаркета с ниско съпротивление и икономия на гориво.",
+                btn_inquiry: "Запитване",
+                notice_title: "Търсите друг размер?", notice_desc: "Посочените модели са най-разпространените. ЕН ЕР ДЖИ 3 ЕООД произвежда и предлага много други шарки и размери при запитване.",
+                title_transport: "Транспорт и Спедиция",
+                trans_ftl_title: "Комплектни товари (FTL)", trans_ftl_desc: "Бърз и директен международен транспорт на цели товари в Европа.",
+                trans_ltl_title: "Групажни товари (LTL)", trans_ltl_desc: "Икономични и гъвкави решения за редовни по-малки пратки.",
+                relations_title: "Обслужвани релации",
+                c_bg: "България", c_ro: "Румъния", c_de: "Германия", c_es: "Испания", c_it: "Италия", c_fr: "Франция", c_hr: "Хърватия", c_hu: "Унгария",
+                why_1_t: "Модерен автопарк", why_1_d: "Екологични и поддържани камиони.",
+                why_2_t: "Опитен екип", why_2_d: "Професионални шофьори и спедитори.",
+                why_3_t: "Гъвкави решения", why_3_d: "Персонализиран подход.",
+                why_4_t: "Конкурентни цени", why_4_d: "Оптимално съотношение цена/качество.",
+                why_5_t: "24/7 Поддръжка", why_5_d: "Постоянна връзка с клиента.",
+                why_6_t: "GPS Проследяване", why_6_d: "Контрол в реално време.",
+                title_about: "За Нас",
+                about_p1: "ЕН ЕР ДЖИ 3 ЕООД е утвърдена компания с дългогодишен опит в транспортния бранш, създадена като естествен продължител и наследник на Гуми Нира Транс ЕООД. Ние изграждаме дългосрочни и коректни партньорски отношения, като предлагаме комплекс от надеждни решения за Вашия бизнес в две основни направления: международен транспорт и спедиция в цяла Европа, както и дистрибуция на висококачествени регенерирани гуми.",
+                about_p2: "Компанията е официален и дългогодишен представител на марката EVERSAFE. Протекторите се произвеждат в Малайзия по най-високи технологични стандарти, гарантиращи безопасност, издръжливост и икономичност при тежки експлоатационни условия.",
+                about_ece: "Официален европейски сертификат ECE R109",
+                title_contacts: "Контакти",
+                cont_trans_h: "Транспорт и Спедиция", cont_tires_h: "Гуми и Регенерат", cont_addr_h: "Адрес",
+                cont_addr_p: "гр. Варна, бул. \"Владислав Варненчик\" 281", cont_time: "Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.",
+                whatsapp_title: "WhatsApp Чат", footer_text: "© 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД. Всички права запазени."
+            },
+            en: {
+                nav_home: "Home", nav_tires: "Retread Tires", nav_transport: "Transport & Forwarding", nav_about: "About Us", nav_contacts: "Contacts",
+                hero_title: "Quality and Reliability with NRG3", hero_desc: "Production of premium retreaded tires for heavy vehicles and international transport across Europe.",
+                btn_tires: "Retread Tires", btn_contact: "Contact Us",
+                title_tires: "Retread Tires",
+                tire_de2: "Drive tread with excellent grip for regional and heavy transport.",
+                tire_dy3: "Mixed tread (On/Off Road) for asphalt and construction sites.",
+                tire_lu63: "Trailer tread with low rolling resistance and fuel economy.",
+                btn_inquiry: "Inquiry",
+                notice_title: "Looking for another size?", notice_desc: "The listed models are the most common. NRG3 LTD produces and offers many other patterns and sizes upon request.",
+                title_transport: "Transport & Forwarding",
+                trans_ftl_title: "Full Truck Loads (FTL)", trans_ftl_desc: "Fast and direct international transport of full loads across Europe.",
+                trans_ltl_title: "Less than Truckload (LTL)", trans_ltl_desc: "Economical and flexible solutions for regular smaller shipments.",
+                relations_title: "Served Destinations",
+                c_bg: "Bulgaria", c_ro: "Romania", c_de: "Germany", c_es: "Spain", c_it: "Italy", c_fr: "France", c_hr: "Croatia", c_hu: "Hungary",
+                why_1_t: "Modern Fleet", why_1_d: "Eco-friendly and well-maintained trucks.",
+                why_2_t: "Experienced Team", why_2_d: "Professional drivers and forwarders.",
+                why_3_t: "Flexible Solutions", why_3_d: "Personalized approach.",
+                why_4_t: "Competitive Prices", why_4_d: "Optimal price-quality ratio.",
+                why_5_t: "24/7 Support", why_5_d: "Constant communication with the client.",
+                why_6_t: "GPS Tracking", why_6_d: "Real-time control.",
+                title_about: "About Us",
+                about_p1: "NRG 3 LTD is an established company with years of experience in the transport sector, created as a natural successor and continuation of Gumi Nira Trans LTD. We build long-term and fair partnerships, offering a complete set of reliable solutions for your business in two main directions: international transport and forwarding across Europe, as well as the distribution of high-quality retreaded tires.",
+                about_p2: "The company is an official and long-standing representative of the EVERSAFE brand. The treads are manufactured in Malaysia according to the highest technological standards, ensuring safety, durability, and economy under heavy operating conditions.",
+                about_ece: "Official European Certificate ECE R109",
+                title_contacts: "Contacts",
+                cont_trans_h: "Transport & Forwarding", cont_tires_h: "Tires & Retreads", cont_addr_h: "Address",
+                cont_addr_p: "Varna, 281 Vladislav Varnenchik Blvd.", cont_time: "Mon - Fri: 08:30 - 17:30 | Sat: 09:00 - 13:00",
+                whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 LTD & Gumi Nira Trans LTD. All rights reserved."
+            },
+            ro: {
+                nav_home: "Acasă", nav_tires: "Anvelope Resapate", nav_transport: "Transport și Expediție", nav_about: "Despre Noi", nav_contacts: "Contact",
+                hero_title: "Calitate și Fiabilitate cu NRG3", hero_desc: "Producție de anvelope resapate premium pentru vehicule grele și transport internațional în întreaga Europă.",
+                btn_tires: "Anvelope Resapate", btn_contact: "Contactați-ne",
+                title_tires: "Anvelope Resapate",
+                tire_de2: "Profil de tracțiune cu aderență excelentă pentru transport regional și greu.",
+                tire_dy3: "Profil mixt (On/Off Road) pentru asfalt și șantiere de construcții.",
+                tire_lu63: "Profil pentru remorci cu rezistență redusă la rulare și economie de combustibil.",
+                btn_inquiry: "Cerere",
+                notice_title: "Căutați altă dimensiune?", notice_desc: "Modelele enumerate sunt cele mai comune. NRG3 SRL produce și oferă multe alte modele și dimensiuni la cerere.",
+                title_transport: "Transport și Expediție",
+                trans_ftl_title: "Încărcături Complete (FTL)", trans_ftl_desc: "Transport internațional rapid și direct de încărcături complete în Europa.",
+                trans_ltl_title: "Grupaj (LTL)", trans_ltl_desc: "Soluții economice și flexibile pentru expedieri mai mici regulate.",
+                relations_title: "Destinații Deservite",
+                c_bg: "Bulgaria", c_ro: "România", c_de: "Germania", c_es: "Spania", c_it: "Italia", c_fr: "Franța", c_hr: "Croația", c_hu: "Ungaria",
+                why_1_t: "Flotă Modernă", why_1_d: "Camioane ecologice și bine întreținute.",
+                why_2_t: "Echipă Experimentată", why_2_d: "Șoferi și expeditori profesioniști.",
+                why_3_t: "Soluții Flexibile", why_3_d: "Abordare personalizată.",
+                why_4_t: "Prețuri Competitive", why_4_d: "Raport optim preț-calitate.",
+                why_5_t: "Suport 24/7", why_5_d: "Comunicare permanentă cu clientul.",
+                why_6_t: "Urmărire GPS", why_6_d: "Control în timp real.",
+                title_about: "Despre Noi",
+                about_p1: "NRG 3 SRL este o companie consacrată cu mulți ani de experiență în sectorul transporturilor, creată ca succesor natural al Gumi Nira Trans SRL. Construim parteneriate pe termen lung și corecte, oferind un set complet de soluții fiabile pentru afacerea dvs. în două direcții principale: transport internațional și expediție în toată Europa, precum și distribuția de anvelope resapate de înaltă calitate.",
+                about_p2: "Compania este un reprezentant oficial și de lungă durată al mărcii EVERSAFE. Profilurile sunt fabricate în Malaezia la cele mai înalte standarde tehnologice, asigurând siguranță, durabilitate și economie în condiții dificile de operare.",
+                about_ece: "Certificat European Oficial ECE R109",
+                title_contacts: "Contact",
+                cont_trans_h: "Transport și Expediție", cont_tires_h: "Anvelope și Resapate", cont_addr_h: "Adresă",
+                cont_addr_p: "Varna, Bd. Vladislav Varnenchik nr. 281", cont_time: "Luni - Vin: 08:30 - 17:30 | Sâm: 09:00 - 13:00",
+                whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SRL & Gumi Nira Trans SRL. Toate drepturile rezervate."
+            },
+            de: {
+                nav_home: "Startseite", nav_tires: "Runderneuerte Reifen", nav_transport: "Transport & Spedition", nav_about: "Über Uns", nav_contacts: "Kontakt",
+                hero_title: "Qualität und Zuverlässigkeit mit NRG3", hero_desc: "Herstellung von Premium-rundelerneuerten Reifen für Nutzfahrzeuge und internationale Transporte in ganz Europa.",
+                btn_tires: "Runderneuerte Reifen", btn_contact: "Kontaktieren Sie uns",
+                title_tires: "Runderneuerte Reifen",
+                tire_de2: "Antriebsprofil mit exzellentem Grip für Regional- und Schwertransport.",
+                tire_dy3: "Mischprofil (On/Off Road) für Asphalt und Baustellen.",
+                tire_lu63: "Anhängerprofil mit geringem Rollwiderstand und Kraftstoffeinsparung.",
+                btn_inquiry: "Anfrage",
+                notice_title: "Suchen Sie eine andere Größe?", notice_desc: "Die aufgeführten Modelle sind am häufigsten. NRG3 GmbH produziert und bietet auf Anfrage viele weitere Profile und Größen an.",
+                title_transport: "Transport & Spedition",
+                trans_ftl_title: "Komplettladungen (FTL)", trans_ftl_desc: "Schneller und direkter internationaler Transport von Komplettladungen in Europa.",
+                trans_ltl_title: "Teilladungen (LTL)", trans_ltl_desc: "Wirtschaftliche und flexible Lösungen für regelmäßige kleinere Sendungen.",
+                relations_title: "Bediente Relationen",
+                c_bg: "Bulgarien", c_ro: "Rumänien", c_de: "Deutschland", c_es: "Spanien", c_it: "Italien", c_fr: "Frankreich", c_hr: "Kroatien", c_hu: "Ungarn",
+                why_1_t: "Moderne Flotte", why_1_d: "Umweltfreundliche und gepflegte Lkw.",
+                why_2_t: "Erfahrenes Team", why_2_d: "Professionelle Fahrer und Spediteure.",
+                why_3_t: "Flexible Lösungen", why_3_d: "Personalisierter Ansatz.",
+                why_4_t: "Wettbewerbsfähige Preise", why_4_d: "Optimales Preis-Leistungs-Verhältnis.",
+                why_5_t: "24/7 Support", why_5_d: "Ständige Kommunikation mit dem Kunden.",
+                why_6_t: "GPS-Verfolgung", why_6_d: "Echtzeit-Kontrolle.",
+                title_about: "Über Uns",
+                about_p1: "NRG 3 GmbH ist ein etabliertes Unternehmen mit langjähriger Erfahrung im Transportsektor, das als natürlicher Nachfolger von Gumi Nira Trans GmbH gegründet wurde. Wir pflegen langfristige und faire Partnerschaften und bieten umfassende Lösungen für Ihr Geschäft in zwei Hauptbereichen: internationale Transport- und Speditionsdienstleistungen in ganz Europa sowie den Vertrieb hochwertiger runderneuerter Reifen.",
+                about_p2: "Das Unternehmen ist offizieller und langjähriger Vertreter der Marke EVERSAFE. Die Profile werden in Malaysia nach höchsten technologischen Standards hergestellt und garantieren Sicherheit, Langlebigkeit und Wirtschaftlichkeit unter schweren Einsatzbedingungen.",
+                about_ece: "Offizielles europäisches Zertifikat ECE R109",
+                title_contacts: "Kontakt",
+                cont_trans_h: "Transport & Spedition", cont_tires_h: "Reifen & Runderneuerung", cont_addr_h: "Adresse",
+                cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Mo - Fr: 08:30 - 17:30 | Sa: 09:00 - 13:00",
+                whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 GmbH & Gumi Nira Trans GmbH. Alle Rechte vorbehalten."
+            },
+            es: {
+                nav_home: "Inicio", nav_tires: "Neumáticos Recauchutados", nav_transport: "Transporte y Expedición", nav_about: "Sobre Nosotros", nav_contacts: "Contacto",
+                hero_title: "Calidad y Fiabilidad con NRG3", hero_desc: "Producción de neumáticos recauchutados premium para vehículos pesados y transporte internacional en toda Europa.",
+                btn_tires: "Neumáticos Recauchutados", btn_contact: "Contáctenos",
+                title_tires: "Neumáticos Recauchutados",
+                tire_de2: "Banda de tracción con excelente agarre para transporte regional y pesado.",
+                tire_dy3: "Banda mixta (On/Off Road) para asfalto y obras de construcción.",
+                tire_lu63: "Banda para remolques con baja resistencia a la rodadura y ahorro de combustible.",
+                btn_inquiry: "Consulta",
+                notice_title: "¿Busca otra medida?", notice_desc: "Los modelos listados son los más comunes. NRG3 S.R.L. produce y ofrece muchos otros diseños y medidas bajo pedido.",
+                title_transport: "Transporte y Expedición",
+                trans_ftl_title: "Cargas Completas (FTL)", trans_ftl_desc: "Transporte internacional rápido y directo de cargas completas en Europa.",
+                trans_ltl_title: "Cargas Parciales (LTL)", trans_ltl_desc: "Soluciones económicas y flexibles para envíos más pequeños regulares.",
+                relations_title: "Destinos Atendidos",
+                c_bg: "Bulgaria", c_ro: "Rumanía", c_de: "Alemania", c_es: "España", c_it: "Italia", c_fr: "Francia", c_hr: "Croacia", c_hu: "Hungría",
+                why_1_t: "Flota Moderna", why_1_d: "Camiones ecológicos y bien mantenidos.",
+                why_2_t: "Equipo Experimentado", why_2_d: "Conductores y transitarios profesionales.",
+                why_3_t: "Soluciones Flexibles", why_3_d: "Enfoque personalizado.",
+                why_4_t: "Precios Competitivos", why_4_d: "Óptima relación calidad-precio.",
+                why_5_t: "Soporte 24/7", why_5_d: "Comunicación constante con el cliente.",
+                why_6_t: "Seguimiento GPS", why_6_d: "Control en tiempo real.",
+                title_about: "Sobre Nosotros",
+                about_p1: "NRG 3 S.R.L. es una empresa consolidada con años de experiencia en el sector del transporte, creada como sucesora natural de Gumi Nira Trans S.R.L. Construimos asociaciones a largo plazo y justas, ofreciendo un conjunto completo de soluciones fiables para su negocio en dos direcciones principales: transporte internacional y expedición en toda Europa, así como la distribución de neumáticos recauchutados de alta calidad.",
+                about_p2: "La empresa es representante oficial y de larga trayectoria de la marca EVERSAFE. Las bandas se fabrican en Malasia según los más altos estándares tecnológicos, garantizando seguridad, durabilidad y economía en condiciones operativas severas.",
+                about_ece: "Certificado Europeo Oficial ECE R109",
+                title_contacts: "Contacto",
+                cont_trans_h: "Transporte y Expedición", cont_tires_h: "Neumáticos y Recauchutados", cont_addr_h: "Dirección",
+                cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Vie: 08:30 - 17:30 | Sáb: 09:00 - 13:00",
+                whatsapp_title: "Chat de WhatsApp", footer_text: "© 2026 NRG 3 S.R.L. & Gumi Nira Trans S.R.L. Todos los derechos reservados."
+            },
+            it: {
+                nav_home: "Home", nav_tires: "Pneumatici Ricoperti", nav_transport: "Trasporti e Spedizioni", nav_about: "Chi Siamo", nav_contacts: "Contatti",
+                hero_title: "Qualità e Affidabilità con NRG3", hero_desc: "Produzione di pneumatici ricoperti premium per veicoli pesanti e trasporti internazionali in tutta Europa.",
+                btn_tires: "Pneumatici Ricoperti", btn_contact: "Contattaci",
+                title_tires: "Pneumatici Ricoperti",
+                tire_de2: "Battistrada di trazione con eccellente aderenza per trasporti regionali e pesanti.",
+                tire_dy3: "Battistrada misto (On/Off Road) per asfalto e cantieri edili.",
+                tire_lu63: "Battistrada per rimorchi a bassa resistenza al rotolamento e risparmio di carburante.",
+                btn_inquiry: "Richiesta",
+                notice_title: "Cerchi un'altra misura?", notice_desc: "I modelli elencati sono i più comuni. NRG3 SRL produce e offre molti altri disegni e misure su richiesta.",
+                title_transport: "Trasporti e Spedizioni",
+                trans_ftl_title: "Carichi Completi (FTL)", trans_ftl_desc: "Trasporto internazionale rapido e diretto di carichi completi in Europa.",
+                trans_ltl_title: "Carichi Parziali (LTL)", trans_ltl_desc: "Soluzioni economiche e flessibili per spedizioni minori regolari.",
+                relations_title: "Destinazioni Servite",
+                c_bg: "Bulgaria", c_ro: "Romania", c_de: "Germania", c_es: "Spagna", c_it: "Italia", c_fr: "Francia", c_hr: "Croazia", c_hu: "Ungheria",
+                why_1_t: "Flotta Moderna", why_1_d: "Camion ecologici e ben tenuti.",
+                why_2_t: "Team Esperto", why_2_d: "Autisti e spedizionieri professionisti.",
+                why_3_t: "Soluzioni Flessibili", why_3_d: "Approccio personalizzato.",
+                why_4_t: "Prezzi Competitivi", why_4_d: "Rapporto qualità-prezzo ottimale.",
+                why_5_t: "Supporto 24/7", why_5_d: "Comunicazione costante con il cliente.",
+                why_6_t: "Tracciamento GPS", why_6_d: "Controllo in tempo reale.",
+                title_about: "Chi Siamo",
+                about_p1: "NRG 3 SRL è un'azienda consolidata con anni di esperienza nel settore dei trasporti, nata come naturale continuazione e successore di Gumi Nira Trans SRL. Costruiamo partnership di lungo termine e corrette, offrendo una gamma completa di soluzioni affidabili per il vostro business in due direzioni principali: trasporti internazionali e spedizioni in tutta Europa, oltre alla distribuzione di pneumatici ricoperti di alta qualità.",
+                about_p2: "L'azienda è rappresentante ufficiale e di lunga data del marchio EVERSAFE. I battistrada sono prodotti in Malaysia secondo i più alti standard tecnologici, garantendo sicurezza, durata ed economicità in condizioni operative gravose.",
+                about_ece: "Certificato Europeo Ufficiale ECE R109",
+                title_contacts: "Contatti",
+                cont_trans_h: "Trasporti e Spedizioni", cont_tires_h: "Pneumatici e Ricoperti", cont_addr_h: "Indirizzo",
+                cont_addr_p: "Varna, Viale Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sab: 09:00 - 13:00",
+                whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SRL & Gumi Nira Trans SRL. Tutti i diritti riservati."
+            },
+            fr: {
+                nav_home: "Accueil", nav_tires: "Pneus Rechapés", nav_transport: "Transport et Affrètement", nav_about: "À Propos", nav_contacts: "Contacts",
+                hero_title: "Qualité et Fiabilité avec NRG3", hero_desc: "Production de pneus rechapés haut de gamme pour véhicules lourds et transport international dans toute l'Europe.",
+                btn_tires: "Pneus Rechapés", btn_contact: "Contactez-nous",
+                title_tires: "Pneus Rechapés",
+                tire_de2: "Bande de roulement motrice avec excellente adhérence pour transport régional et lourd.",
+                tire_dy3: "Bande mixte (On/Off Road) pour asphalte et chantiers de construction.",
+                tire_lu63: "Bande pour remorques à faible résistance au roulement et économie de carburant.",
+                btn_inquiry: "Demande",
+                notice_title: "Vous cherchez une autre taille ?", notice_desc: "Les modèles listés sont les plus courants. NRG3 SARL produit et propose de nombreux autres profils et tailles sur demande.",
+                title_transport: "Transport et Affrètement",
+                trans_ftl_title: "Lots Complets (FTL)", trans_ftl_desc: "Transport international rapide et direct de charges complètes en Europe.",
+                trans_ltl_title: "Lots Partiels (LTL)", trans_ltl_desc: "Solutions économiques et flexibles pour les envois plus petits réguliers.",
+                relations_title: "Destinations Desservies",
+                c_bg: "Bulgarie", c_ro: "Roumanie", c_de: "Allemagne", c_es: "Espagne", c_it: "Italie", c_fr: "France", c_hr: "Croatie", c_hu: "Hongrie",
+                why_1_t: "Flotte Moderne", why_1_d: "Camions écologiques et bien entretenus.",
+                why_2_t: "Équipe Expérimentée", why_2_d: "Chauffeurs et transitaires professionnels.",
+                why_3_t: "Solutions Flexibles", why_3_d: "Approche personnalisée.",
+                why_4_t: "Prix Compétitifs", why_4_d: "Rapport qualité-prix optimal.",
+                why_5_t: "Support 24/7", why_5_d: "Communication constante avec le client.",
+                why_6_t: "Suivi GPS", why_6_d: "Contrôle en temps réel.",
+                title_about: "À Propos",
+                about_p1: "NRG 3 SARL est une entreprise établie avec de nombreuses années d'expérience dans le secteur du transport, créée comme le successeur naturel de Gumi Nira Trans SARL. Nous bâtissons des partenariats à long terme et équitables, offrant un ensemble complet de solutions fiables pour votre entreprise dans deux directions principales : le transport international et l'affrètement dans toute l'Europe, ainsi que la distribution de pneus rechapés de haute qualité.",
+                about_p2: "L'entreprise est le représentant officiel et de longue date de la marque EVERSAFE. Les bandes sont fabriquées en Malaisie selon les normes technologiques les plus élevées, garantissant sécurité, durabilité et économie dans des conditions d'exploitation difficiles.",
+                about_ece: "Certificat Européen Officiel ECE R109",
+                title_contacts: "Contacts",
+                cont_trans_h: "Transport et Affrètement", cont_tires_h: "Pneus et Rechapés", cont_addr_h: "Adresse",
+                cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sam: 09:00 - 13:00",
+                whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SARL & Gumi Nira Trans SARL. Tous droits réservés."
+            },
+            hr: {
+                nav_home: "Početna", nav_tires: "Obnovljene Gume", nav_transport: "Transport i Otpremništvo", nav_about: "O Nama", nav_contacts: "Kontakti",
+                hero_title: "Kvaliteta i Pouzdanost s NRG3", hero_desc: "Proizvodnja premium obnovljenih guma za teretna vozila i međunarodni transport diljem Europe.",
+                btn_tires: "Obnovljene Gume", btn_contact: "Kontaktirajte nas",
+                title_tires: "Obnovljene Gume",
+                tire_de2: "Pogonski gazni sloj s odličnim prianjanjem za regionalni i teški transport.",
+                tire_dy3: "Mješoviti gazni sloj (On/Off Road) za asfalt i gradilišta.",
+                tire_lu63: "Gazni sloj za prikolice s niskim otporom kotrljanja i uštedom goriva.",
+                btn_inquiry: "Upit",
+                notice_title: "Tražite li drugu dimenziju?", notice_desc: "Navedeni modeli su najčešći. NRG3 d.o.o. proizvodi i nudi mnoge druge uzorke i dimenzije na upit.",
+                title_transport: "Transport i Otpremništvo",
+                trans_ftl_title: "Kompletni utovari (FTL)", trans_ftl_desc: "Brz i izravan međunarodni transport cijelih utovara u Europi.",
+                trans_ltl_title: "Zbirni utovari (LTL)", trans_ltl_desc: "Ekonomična i fleksibilna rješenja za redovite manje pošiljke.",
+                relations_title: "Uslužne Relacije",
+                c_bg: "Bugarska", c_ro: "Rumunjska", c_de: "Njemačka", c_es: "Španjolska", c_it: "Italija", c_fr: "Francuska", c_hr: "Hrvatska", c_hu: "Mađarska",
+                why_1_t: "Moderna flota", why_1_d: "Ekološki i održavani kamioni.",
+                why_2_t: "Iskusan tim", why_2_d: "Profesionalni vozači i špediteri.",
+                why_3_t: "Fleksibilna rješenja", why_3_d: "Personalizirani pristup.",
+                why_4_t: "Konkurentne cijene", why_4_d: "Optimalan omjer cijene i kvalitete.",
+                why_5_t: "24/7 Podrška", why_5_d: "Stalna komunikacija s klijentom.",
+                why_6_t: "GPS Praćenje", why_6_d: "Kontrola u stvarnom vremenu.",
+                title_about: "O Nama",
+                about_p1: "NRG 3 d.o.o. je renomirana tvrtka s dugogodišnjim iskustvom u transportnom sektoru, osnovana kao prirodni sljedbenik i nasljednik Gumi Nira Trans d.o.o. Gradimo dugoročne i korektne partnerske odnose, nudeći skup pouzdanih rješenja za vaše poslovanje u dva glavna smjera: međunarodni transport i špedicija diljem Europe te distribucija visokokvalitetnih obnovljenih guma.",
+                about_p2: "Tvrtka je službeni i dugogodišnji zastupnik marke EVERSAFE. Gazni slojevi se proizvode u Maleziji prema najvišim tehnološkim standardima, jamčeći sigurnost, trajnost i ekonomičnost u teškim uvjetima rada.",
+                about_ece: "Službeni europski certifikat ECE R109",
+                title_contacts: "Kontakti",
+                cont_trans_h: "Transport i Otpremništvo", cont_tires_h: "Gume i Obnova", cont_addr_h: "Adresa",
+                cont_addr_p: "Varna, Bulevar Vladislav Varnenchik 281", cont_time: "Pon - Pet: 08:30 - 17:30 | Sub: 09:00 - 13:00",
+                whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 d.o.o. & Gumi Nira Trans d.o.o. Sva prava pridržana."
+            },
+            hu: {
+                nav_home: "Kezdőlap", nav_tires: "Futózott Abroncsok", nav_transport: "Szállítás és Spedíció", nav_about: "Rólunk", nav_contacts: "Kapcsolat",
+                hero_title: "Minőség és Megbízhatóság az NRG3-mal", hero_desc: "Prémium futózott gumiabroncsok gyártása nehézgépjárművekhez és nemzetközi szállításhoz egész Európában.",
+                btn_tires: "Futózott Abroncsok", btn_contact: "Kapcsolat",
+                title_tires: "Futózott Abroncsok",
+                tire_de2: "Meghajtó mintázat kiváló tapadással regionális és nehéz szállításra.",
+                tire_dy3: "Vegyes mintázat (On/Off Road) aszfalthoz és építkezésekhez.",
+                tire_lu63: "Pótkocsi mintázat alacsony gördülési ellenállással és üzemanyag-megtakarítással.",
+                btn_inquiry: "Érdeklődés",
+                notice_title: "Más méretet keres?", notice_desc: "A felsorolt modellek a legelterjedtebbek. Az NRG3 Kft. kérésre sok más mintát és méretet is gyárt és kínál.",
+                title_transport: "Szállítás és Spedíció",
+                trans_ftl_title: "Komplett rakományok (FTL)", trans_ftl_desc: "Gyors és közvetlen nemzetközi szállítás komplett rakományokkal Európában.",
+                trans_ltl_title: "Részrakományok (LTL)", trans_ltl_desc: "Gazdaságos és rugalmas megoldások rendszeres kisebb küldeményekhez.",
+                relations_title: "Kiszolgált Útvonalak",
+                c_bg: "Bulgária", c_ro: "Románia", c_de: "Németország", c_es: "Spanyolország", c_it: "Olaszország", c_fr: "Franciaország", c_hr: "Horvátország", c_hu: "Magyarország",
+                why_1_t: "Modern Flotta", why_1_d: "Környezetbarát és karbantartott teherautók.",
+                why_2_t: "Tapasztalt Csapat", why_2_d: "Professzionális sofőrök és szállítmányozók.",
+                why_3_t: "Rugalmas Megoldások", why_3_d: "Személyre szabott megközelítés.",
+                why_4_t: "Versenyképes Árak", why_4_d: "Optimális ár-érték arány.",
+                why_5_t: "24/7 Támogatás", why_5_d: "Folyamatos kapcsolat az ügyféllel.",
+                why_6_t: "GPS Követés", why_6_d: "Valós idejű ellenőrzés.",
+                title_about: "Rólunk",
+                about_p1: "Az NRG 3 Kft. egy elismert, a szállítási ágazatban sokéves tapasztalattal rendelkező vállalat, amely a Gumi Nira Trans Kft. természetes utódjaként és folytatásaként jött létre. Hosszú távú és korrekt partnerségi kapcsolatokat építünk ki, komplett és megbízható megoldásokat kínálva vállalkozása számára két fő területen: nemzetközi szállítás és spedíció egész Európában, valamint kiváló minőségű futózott gumiabroncsok forgalmazása.",
+                about_p2: "A vállalat az EVERSAFE márka hivatalos és régóta tartó képviselője. A mintázatokat Malajziában gyártják a legmagasabb technológiai szabványok szerint, biztosítva a biztonságot, a tartósságot és a gazdaságosságot nehéz üzemi körülmények között is.",
+                about_ece: "Hivatalos európai tanúsítvány ECE R109",
+                title_contacts: "Kapcsolat",
+                cont_trans_h: "Szállítás és Spedíció", cont_tires_h: "Gumiabroncsok és Futózás", cont_addr_h: "Cím",
+                cont_addr_p: "Várna, Vladislav Varnenchik sugárút 281.", cont_time: "Hét - Pén: 08:30 - 17:30 | Szo: 09:00 - 13:00",
+                whatsapp_title: "WhatsApp Csevegés", footer_text: "© 2026 NRG 3 Kft. & Gumi Nira Trans Kft. Minden jog fenntartva."
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll("[data-i18n]");
+            elements.forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            localStorage.setItem("preferred_lang", lang);
+        }
+
+        window.onload = function() {
+            const savedLang = localStorage.getItem("preferred_lang") || "bg";
+            document.getElementById("langSelect").value = savedLang;
+            changeLanguage(savedLang);
+        };
+    </script>
 </body>
 </html>
