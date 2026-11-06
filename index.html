@@ -20,6 +20,7 @@
             --border-color: #1e293b;
             --whatsapp-color: #25d366;
             --viber-color: #7360f2;
+            --viber-glow: rgba(115, 96, 242, 0.4);
             --instagram-color: #e1306c;
             --tiktok-color: #00f2fe;
         }
@@ -177,25 +178,26 @@
         /* HERO SECTION */
         .hero {
             padding: 140px 20px 100px 20px;
-            background: linear-gradient(rgba(7, 9, 12, 0.8), rgba(7, 9, 12, 0.95)), 
+            background: linear-gradient(rgba(7, 9, 12, 0.82), rgba(7, 9, 12, 0.95)), 
                         url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 46px;
+            font-size: 44px;
             font-weight: 800;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .hero h1 span { color: var(--flag-green); text-shadow: 0 0 20px var(--accent-glow); }
+        .hero h1 span.highlight-green { color: var(--flag-green); text-shadow: 0 0 20px var(--accent-glow); }
+        .hero h1 span.highlight-viber { color: var(--viber-color); text-shadow: 0 0 20px var(--viber-glow); }
 
         .hero p {
             font-size: 19px;
             color: var(--text-muted);
-            max-width: 750px;
+            max-width: 780px;
             margin: 0 auto 35px;
         }
 
@@ -207,7 +209,7 @@
         }
 
         .btn {
-            padding: 13px 28px;
+            padding: 13px 26px;
             border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
@@ -216,6 +218,7 @@
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 15px;
         }
 
         .btn-green { 
@@ -227,6 +230,15 @@
             box-shadow: 0 6px 20px var(--accent-glow); 
         }
         
+        .btn-viber { 
+            background: linear-gradient(135deg, var(--viber-color), #5744c7); 
+            color: white; 
+        }
+        .btn-viber:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px var(--viber-glow); 
+        }
+
         .btn-red { 
             background: linear-gradient(135deg, var(--flag-red), #b32431); 
             color: white; 
@@ -424,11 +436,11 @@
             transition: 0.3s;
             backdrop-filter: blur(10px);
         }
-        .transport-card:hover { border-color: var(--flag-green); transform: translateY(-5px); }
+        .transport-card:hover { border-color: var(--viber-color); transform: translateY(-5px); box-shadow: 0 0 20px var(--viber-glow); }
 
         .transport-card i {
             font-size: 36px;
-            color: var(--flag-green);
+            color: var(--viber-color);
             margin-bottom: 15px;
         }
 
@@ -449,7 +461,7 @@
             transition: 0.3s;
             backdrop-filter: blur(10px);
         }
-        .country-box:hover { background: rgba(0,176,124,0.1); border-color: var(--flag-green); color: #00ffb3; }
+        .country-box:hover { background: rgba(115, 96, 242, 0.15); border-color: var(--viber-color); color: #a295ff; }
 
         .why-us-grid {
             display: grid;
@@ -462,7 +474,7 @@
             background: var(--bg-card);
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid var(--flag-green);
+            border-left: 4px solid var(--viber-color);
             border: 1px solid var(--border-color);
             border-left-width: 4px;
             backdrop-filter: blur(10px);
@@ -510,6 +522,7 @@
 
         .contact-group { margin-bottom: 25px; }
         .contact-group h4 { color: var(--flag-green); margin-bottom: 10px; font-size: 18px; }
+        .contact-group h4.viber-title { color: var(--viber-color); }
         .contact-group a { color: #fff; text-decoration: none; transition: 0.3s; }
         .contact-group a:hover { color: var(--flag-green); }
 
@@ -706,11 +719,21 @@
     </header>
 
     <section id="home" class="hero" style="opacity:1; transform:none;">
-        <h1 data-i18n="hero_title">Качество и Надеждност с <span>NRG3</span></h1>
+        <h1 data-i18n="hero_title">
+            <span class="highlight-green">Гуми и Регенерат</span> &amp; 
+            <span class="highlight-viber">Транспорт и Спедиция</span>
+        </h1>
         <p data-i18n="hero_desc">Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.</p>
         <div class="btn-group">
-            <a href="#tires" class="btn btn-green" data-i18n="btn_tires"><i class="fa-solid fa-dharmachakra"></i> Гуми Регенерат</a>
-            <a href="#contacts" class="btn btn-red" data-i18n="btn_contact"><i class="fa-solid fa-envelope"></i> Свържи се с нас</a>
+            <a href="https://wa.me/359884112356" target="_blank" class="btn btn-green">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp бърза връзка
+            </a>
+            <a href="viber://chat?number=%2B359887785860" target="_blank" class="btn btn-viber">
+                <i class="fa-brands fa-viber"></i> Viber бърза връзка
+            </a>
+            <a href="#contacts" class="btn btn-red" data-i18n="btn_contact">
+                <i class="fa-solid fa-envelope"></i> Свържи се с нас
+            </a>
         </div>
     </section>
 
@@ -792,7 +815,7 @@
     <div class="section-wrapper bg-transport">
         <section id="transport">
             <div class="section-title">
-                <h2 data-i18n="title_transport">Транспорт и Спедиция</h2>
+                <h2 data-i18n="title_transport" style="border-bottom-color: var(--viber-color);">Транспорт и Спедиция</h2>
             </div>
             <div class="transport-grid">
                 <div class="transport-card">
@@ -855,13 +878,13 @@
         <div class="contacts-grid">
             <div class="contact-box">
                 <div class="contact-group">
-                    <h4 data-i18n="cont_trans_h"><i class="fa-solid fa-truck"></i> Транспорт и Спедиция</h4>
-                    <p>Тел / WhatsApp: <a href="tel:0884112356">0884 11 23 56</a></p>
+                    <h4 class="viber-title" data-i18n="cont_trans_h"><i class="fa-solid fa-truck"></i> Транспорт и Спедиция (Viber)</h4>
+                    <p>Тел / Viber: <a href="viber://chat?number=%2B359887785860">0887 78 58 60</a></p>
                     <p>Имейл: <a href="mailto:gumi_nira_trans@abv.bg">gumi_nira_trans@abv.bg</a></p>
                 </div>
                 <div class="contact-group">
-                    <h4 data-i18n="cont_tires_h"><i class="fa-solid fa-circle-notch"></i> Гуми и Регенерат</h4>
-                    <p>Тел / Viber: <a href="tel:0887785860">0887 78 58 60</a> | <a href="tel:0884112356">0884 11 23 56</a></p>
+                    <h4 data-i18n="cont_tires_h"><i class="fa-solid fa-circle-notch"></i> Гуми и Регенерат (WhatsApp)</h4>
+                    <p>Тел / WhatsApp: <a href="tel:0884112356">0884 11 23 56</a></p>
                     <p>Имейл: <a href="mailto:nrg_3@abv.bg">nrg_3@abv.bg</a></p>
                 </div>
                 <div class="contact-group">
@@ -923,7 +946,8 @@
         const translations = {
             bg: {
                 nav_home: "Начало", nav_tires: "Гуми регенерат", nav_transport: "Транспорт и спедиция", nav_about: "За Нас", nav_contacts: "Контакти",
-                hero_title: "Качество и Надеждност с <span>NRG3</span>", hero_desc: "Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.",
+                hero_title: "<span class=\"highlight-green\">Гуми и Регенерат</span> &amp; <span class=\"highlight-viber\">Транспорт и Спедиция</span>", 
+                hero_desc: "Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.",
                 btn_tires: "Гуми Регенерат", btn_contact: "Свържи се с нас",
                 stat_1: "Опит и утвърдено качество от 2014 г.", stat_2: "Международен транспорт в цяла Европа", stat_3: "Официален европейски сертификат",
                 title_tires: "Гуми Регенерат",
@@ -950,13 +974,14 @@
                 about_p4: "Компанията представя продуктите на EVERSAFE от 2012 година и ги използва от 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.",
                 about_ece: "ЕН ЕР ДЖИ 3 ЕООД притежава ECE R109",
                 title_contacts: "Контакти",
-                cont_trans_h: "Транспорт и Спедиция", cont_tires_h: "Гуми и Регенерат", cont_addr_h: "Адрес", cont_social_h: "Последвайте ни",
+                cont_trans_h: "Транспорт и Спедиция (Viber)", cont_tires_h: "Гуми и Регенерат (WhatsApp)", cont_addr_h: "Адрес", cont_social_h: "Последвайте ни",
                 cont_addr_p: "гр. Варна, бул. \"Владислав Варненчик\" 281", cont_time: "Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.",
                 whatsapp_title: "WhatsApp Чат", footer_text: "© 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД. Всички права запазени."
             },
             en: {
                 nav_home: "Home", nav_tires: "Retread Tires", nav_transport: "Transport & Forwarding", nav_about: "About Us", nav_contacts: "Contacts",
-                hero_title: "Quality and Reliability with <span>NRG3</span>", hero_desc: "Production of premium retreaded tires for heavy vehicles and international transport across Europe.",
+                hero_title: "<span class=\"highlight-green\">Tires & Retreads</span> &amp; <span class=\"highlight-viber\">Transport & Forwarding</span>",
+                hero_desc: "Production of premium retreaded tires for heavy vehicles and international transport across Europe.",
                 btn_tires: "Retread Tires", btn_contact: "Contact Us",
                 stat_1: "Experience & proven quality since 2014", stat_2: "International transport across Europe", stat_3: "Official European certificate",
                 title_tires: "Retread Tires",
@@ -983,13 +1008,14 @@
                 about_p4: "The company has presented EVERSAFE products since 2012 and has used them for 9 years. EVERSAFE treads are manufactured in Malaysia, focusing on technology to achieve a high-quality product sold worldwide.",
                 about_ece: "NRG 3 LTD holds ECE R109",
                 title_contacts: "Contacts",
-                cont_trans_h: "Transport & Forwarding", cont_tires_h: "Tires & Retreads", cont_addr_h: "Address", cont_social_h: "Follow Us",
+                cont_trans_h: "Transport & Forwarding (Viber)", cont_tires_h: "Tires & Retreads (WhatsApp)", cont_addr_h: "Address", cont_social_h: "Follow Us",
                 cont_addr_p: "Varna, 281 Vladislav Varnenchik Blvd.", cont_time: "Mon - Fri: 08:30 - 17:30 | Sat: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 LTD & Gumi Nira Trans LTD. All rights reserved."
             },
             ro: {
                 nav_home: "Acasă", nav_tires: "Anvelope Resapate", nav_transport: "Transport și Expediție", nav_about: "Despre Noi", nav_contacts: "Contact",
-                hero_title: "Calitate și Fiabilitate cu <span>NRG3</span>", hero_desc: "Producție de anvelope resapate premium pentru vehicule grele și transport internațional în întreaga Europă.",
+                hero_title: "<span class=\"highlight-green\">Anvelope Resapate</span> &amp; <span class=\"highlight-viber\">Transport și Expediție</span>",
+                hero_desc: "Producție de anvelope resapate premium pentru vehicule grele și transport internațional în întreaga Europă.",
                 btn_tires: "Anvelope Resapate", btn_contact: "Contactați-ne",
                 stat_1: "Experiență și calitate din 2014", stat_2: "Transport internațional în Europa", stat_3: "Certificat european oficial",
                 title_tires: "Anvelope Resapate",
@@ -1016,13 +1042,14 @@
                 about_p4: "Compania reprezintă produsele EVERSAFE din 2012 și le folosește de 9 ani. Benzile EVERSAFE sunt fabricate în Malaezia, producătorul concentrându-se pe tehnologie de vârf.",
                 about_ece: "NRG 3 SRL deține ECE R109",
                 title_contacts: "Contact",
-                cont_trans_h: "Transport și Expediție", cont_tires_h: "Anvelope și Resapate", cont_addr_h: "Adresă", cont_social_h: "Urmăriți-ne",
+                cont_trans_h: "Transport și Expediție (Viber)", cont_tires_h: "Anvelope și Resapate (WhatsApp)", cont_addr_h: "Adresă", cont_social_h: "Urmăriți-ne",
                 cont_addr_p: "Varna, Bd. Vladislav Varnenchik nr. 281", cont_time: "Luni - Vin: 08:30 - 17:30 | Sâm: 09:00 - 13:00",
                 whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SRL & Gumi Nira Trans SRL. Toate drepturile rezervate."
             },
             de: {
                 nav_home: "Startseite", nav_tires: "Runderneuerte Reifen", nav_transport: "Transport & Spedition", nav_about: "Über Uns", nav_contacts: "Kontakt",
-                hero_title: "Qualität und Zuverlässigkeit mit <span>NRG3</span>", hero_desc: "Herstellung von Premium-rundelerneuerten Reifen für Nutzfahrzeuge und internationale Transporte in ganz Europa.",
+                hero_title: "<span class=\"highlight-green\">Reifen & Runderneuerung</span> &amp; <span class=\"highlight-viber\">Transport & Spedition</span>",
+                hero_desc: "Herstellung von Premium-rundelerneuerten Reifen für Nutzfahrzeuge und internationale Transporte in ganz Europa.",
                 btn_tires: "Runderneuerte Reifen", btn_contact: "Kontaktieren Sie uns",
                 stat_1: "Erfahrung & Qualität seit 2014", stat_2: "Internationale Transporte in Europa", stat_3: "Offizielles europäisches Zertifikat",
                 title_tires: "Runderneuerte Reifen",
@@ -1049,13 +1076,14 @@
                 about_p4: "EVERSAFE-Produkte seit 2012 im Sortiment. Hergestellt in Malaysia.",
                 about_ece: "NRG 3 GmbH besitzt ECE R109",
                 title_contacts: "Kontakt",
-                cont_trans_h: "Transport & Spedition", cont_tires_h: "Reifen & Runderneuerung", cont_addr_h: "Adresse", cont_social_h: "Folgen Sie uns",
+                cont_trans_h: "Transport & Spedition (Viber)", cont_tires_h: "Reifen & Runderneuerung (WhatsApp)", cont_addr_h: "Adresse", cont_social_h: "Folgen Sie uns",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Mo - Fr: 08:30 - 17:30 | Sa: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 GmbH & Gumi Nira Trans GmbH. Alle Rechte vorbehalten."
             },
             es: {
                 nav_home: "Inicio", nav_tires: "Neumáticos Recauchutados", nav_transport: "Transporte y Expedición", nav_about: "Sobre Nosotros", nav_contacts: "Contacto",
-                hero_title: "Calidad y Fiabilidad con <span>NRG3</span>", hero_desc: "Producción de neumáticos recauchutados premium para vehículos pesados y transporte internacional en toda Europa.",
+                hero_title: "<span class=\"highlight-green\">Neumáticos y Recauchutados</span> &amp; <span class=\"highlight-viber\">Transporte y Expedición</span>",
+                hero_desc: "Producción de neumáticos recauchutados premium para vehículos pesados y transporte internacional en toda Europa.",
                 btn_tires: "Neumáticos Recauchutados", btn_contact: "Contáctenos",
                 stat_1: "Experiencia desde 2014", stat_2: "Transporte internacional en Europa", stat_3: "Certificado europeo oficial",
                 title_tires: "Neumáticos Recauchutados",
@@ -1082,13 +1110,14 @@
                 about_p4: "Representamos productos EVERSAFE desde 2012. Fabricados en Malasia.",
                 about_ece: "NRG 3 S.R.L. posee ECE R109",
                 title_contacts: "Contacto",
-                cont_trans_h: "Transporte y Expedición", cont_tires_h: "Neumáticos y Recauchutados", cont_addr_h: "Dirección", cont_social_h: "Síguenos",
+                cont_trans_h: "Transporte y Expedición (Viber)", cont_tires_h: "Neumáticos y Recauchutados (WhatsApp)", cont_addr_h: "Dirección", cont_social_h: "Síguenos",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Vie: 08:30 - 17:30 | Sáb: 09:00 - 13:00",
                 whatsapp_title: "Chat de WhatsApp", footer_text: "© 2026 NRG 3 S.R.L. & Gumi Nira Trans S.R.L. Todos los derechos reservados."
             },
             it: {
                 nav_home: "Home", nav_tires: "Pneumatici Ricoperti", nav_transport: "Trasporti e Spedizioni", nav_about: "Chi Siamo", nav_contacts: "Contatti",
-                hero_title: "Qualità e Affidabilità con <span>NRG3</span>", hero_desc: "Produzione di pneumatici ricoperti premium per veicoli pesanti e trasporti internazionali in tutta Europa.",
+                hero_title: "<span class=\"highlight-green\">Pneumatici e Ricoperti</span> &amp; <span class=\"highlight-viber\">Trasporti e Spedizioni</span>",
+                hero_desc: "Produzione di pneumatici ricoperti premium per veicoli pesanti e trasporti internazionali in tutta Europa.",
                 btn_tires: "Pneumatici Ricoperti", btn_contact: "Contattaci",
                 stat_1: "Esperienza dal 2014", stat_2: "Trasporti internazionali in Europa", stat_3: "Certificato europeo ufficiale",
                 title_tires: "Pneumatici Ricoperti",
@@ -1115,13 +1144,14 @@
                 about_p4: "Prodotti EVERSAFE dal 2012, prodotti in Malaysia.",
                 about_ece: "NRG 3 SRL possiede ECE R109",
                 title_contacts: "Contatti",
-                cont_trans_h: "Trasporti e Spedizioni", cont_tires_h: "Pneumatici e Ricoperti", cont_addr_h: "Indirizzo", cont_social_h: "Seguici",
+                cont_trans_h: "Trasporti e Spedizioni (Viber)", cont_tires_h: "Pneumatici e Ricoperti (WhatsApp)", cont_addr_h: "Indirizzo", cont_social_h: "Seguici",
                 cont_addr_p: "Varna, Viale Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sab: 09:00 - 13:00",
                 whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SRL & Gumi Nira Trans SRL. Tutti i diritti riservati."
             },
             fr: {
                 nav_home: "Accueil", nav_tires: "Pneus Rechapés", nav_transport: "Transport et Affrètement", nav_about: "À Propos", nav_contacts: "Contacts",
-                hero_title: "Qualité et Fiabilité avec <span>NRG3</span>", hero_desc: "Production de pneus rechapés haut de gamme pour véhicules lourds et transport international dans toute l'Europe.",
+                hero_title: "<span class=\"highlight-green\">Pneus et Rechapés</span> &amp; <span class=\"highlight-viber\">Transport et Affrètement</span>",
+                hero_desc: "Production de pneus rechapés haut de gamme pour véhicules lourds et transport international dans toute l'Europe.",
                 btn_tires: "Pneus Rechapés", btn_contact: "Contactez-nous",
                 stat_1: "Expérience depuis 2014", stat_2: "Transport international en Europe", stat_3: "Certificat européen officiel",
                 title_tires: "Pneus Rechapés",
@@ -1148,13 +1178,14 @@
                 about_p4: "Produits EVERSAFE depuis 2012, fabriqués en Malaisie.",
                 about_ece: "NRG 3 SARL détient ECE R109",
                 title_contacts: "Contacts",
-                cont_trans_h: "Transport et Affrètement", cont_tires_h: "Pneus et Rechapés", cont_addr_h: "Adresse", cont_social_h: "Suivez-nous",
+                cont_trans_h: "Transport et Affrètement (Viber)", cont_tires_h: "Pneus et Rechapés (WhatsApp)", cont_addr_h: "Adresse", cont_social_h: "Suivez-nous",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sam: 09:00 - 13:00",
                 whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SARL & Gumi Nira Trans SARL. Tous droits réservés."
             },
             hr: {
                 nav_home: "Početna", nav_tires: "Obnovljene Gume", nav_transport: "Transport i Otpremništvo", nav_about: "O Nama", nav_contacts: "Kontakti",
-                hero_title: "Kvaliteta i Pouzdanost s <span>NRG3</span>", hero_desc: "Proizvodnja premium obnovljenih guma za teretna vozila i međunarodni transport diljem Europe.",
+                hero_title: "<span class=\"highlight-green\">Gume i Obnova</span> &amp; <span class=\"highlight-viber\">Transport i Otpremništvo</span>",
+                hero_desc: "Proizvodnja premium obnovljenih guma za teretna vozila i međunarodni transport diljem Europe.",
                 btn_tires: "Obnovljene Gume", btn_contact: "Kontaktirajte nas",
                 stat_1: "Iskustvo od 2014. godine", stat_2: "Međunarodni transport diljem Europe", stat_3: "Službeni europski certifikat",
                 title_tires: "Obnovljene Gume",
@@ -1181,13 +1212,14 @@
                 about_p4: "EVERSAFE proizvodi od 2012. godine, proizvedeni u Maleziji.",
                 about_ece: "NRG 3 d.o.o. posjeduje ECE R109",
                 title_contacts: "Kontakti",
-                cont_trans_h: "Transport i Otpremništvo", cont_tires_h: "Gume i Obnova", cont_addr_h: "Adresa", cont_social_h: "Pratite nas",
+                cont_trans_h: "Transport i Otpremništvo (Viber)", cont_tires_h: "Gume i Obnova (WhatsApp)", cont_addr_h: "Adresa", cont_social_h: "Pratite nas",
                 cont_addr_p: "Varna, Bulevar Vladislav Varnenchik 281", cont_time: "Pon - Pet: 08:30 - 17:30 | Sub: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 d.o.o. & Gumi Nira Trans d.o.o. Sva prava pridržana."
             },
             hu: {
                 nav_home: "Kezdőlap", nav_tires: "Futózott Abroncsok", nav_transport: "Szállítás és Spedíció", nav_about: "Rólunk", nav_contacts: "Kapcsolat",
-                hero_title: "Minőség és Megbízhatóság az <span>NRG3</span>-mal", hero_desc: "Prémium futózott gumiabroncsok gyártása nehézgépjárművekhez és nemzetközi szállításhoz egész Európában.",
+                hero_title: "<span class=\"highlight-green\">Gumiabroncsok és Futózás</span> &amp; <span class=\"highlight-viber\">Szállítás és Spedíció</span>",
+                hero_desc: "Prémium futózott gumiabroncsok gyártása nehézgépjárművekhez és nemzetközi szállításhoz egész Európában.",
                 btn_tires: "Futózott Abroncsok", btn_contact: "Kapcsolat",
                 stat_1: "Tapasztalat 2014 óta", stat_2: "Nemzetközi szállítás Európában", stat_3: "Hivatalos európai tanúsítvány",
                 title_tires: "Futózott Abroncsok",
@@ -1214,7 +1246,7 @@
                 about_p4: "2012 óta képviseljük az EVERSAFE termékeket. Malajziában készülnek.",
                 about_ece: "NRG 3 Kft. ECE R109 tanúsítvánnyal rendelkezik",
                 title_contacts: "Kapcsolat",
-                cont_trans_h: "Szállítás és Spedíció", cont_tires_h: "Gumiabroncsok és Futózás", cont_addr_h: "Cím", cont_social_h: "Kövess minket",
+                cont_trans_h: "Szállítás és Spedíció (Viber)", cont_tires_h: "Gumiabroncsok és Futózás (WhatsApp)", cont_addr_h: "Cím", cont_social_h: "Kövess minket",
                 cont_addr_p: "Várna, Vladislav Varnenchik sugárút 281.", cont_time: "Hét - Pén: 08:30 - 17:30 | Szo: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Csevegés", footer_text: "© 2026 NRG 3 Kft. & Gumi Nira Trans Kft. Minden jog fenntartva."
             }
