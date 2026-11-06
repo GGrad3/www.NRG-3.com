@@ -18,6 +18,9 @@
             --flag-red: #e63946;
             --accent-glow: rgba(0, 176, 124, 0.4);
             --border-color: #1e293b;
+            --whatsapp-color: #25d366;
+            --instagram-color: #e1306c;
+            --tiktok-color: #00f2fe;
         }
 
         * {
@@ -208,14 +211,29 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .btn-green { background: var(--flag-green); color: white; }
-        .btn-green:hover { background: #00966a; transform: translateY(-3px); box-shadow: 0 6px 20px var(--accent-glow); }
-        .btn-red { background: var(--flag-red); color: white; }
-        .btn-red:hover { background: #c5303c; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(230,57,70,0.4); }
+        .btn-green { 
+            background: linear-gradient(135deg, var(--flag-green), #008a62); 
+            color: white; 
+        }
+        .btn-green:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px var(--accent-glow); 
+        }
+        
+        .btn-red { 
+            background: linear-gradient(135deg, var(--flag-red), #b32431); 
+            color: white; 
+        }
+        .btn-red:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(230,57,70,0.4); 
+        }
 
         /* HIGHLIGHTS STATS BAR */
         .stats-bar {
@@ -456,6 +474,31 @@
         .contact-group a { color: #fff; text-decoration: none; transition: 0.3s; }
         .contact-group a:hover { color: var(--flag-green); }
 
+        .social-links-inline {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-btn-inline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn-inline.wa:hover { background: var(--whatsapp-color); border-color: var(--whatsapp-color); color: #fff; transform: translateY(-3px); }
+        .social-btn-inline.ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; color: #fff; transform: translateY(-3px); }
+        .social-btn-inline.tt:hover { background: #000; border-color: var(--tiktok-color); color: var(--tiktok-color); transform: translateY(-3px); box-shadow: 0 0 10px rgba(0,242,254,0.4); }
+
         .qr-card {
             background: #ffffff;
             color: #111;
@@ -467,30 +510,51 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        /* FLOATING WHATSAPP BUTTON */
-        .whatsapp-float {
+        /* FLOATING SOCIAL MEDIA BUTTONS STACK */
+        .floating-social-stack {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 32px;
-            width: 60px;
-            height: 60px;
-            z-index: 100;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-float {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            transition: all 0.3s ease;
+            color: #FFF;
+            font-size: 26px;
             text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .social-float:hover {
+            transform: scale(1.15) translateX(-4px);
+        }
+
+        .social-float.whatsapp {
+            background-color: var(--whatsapp-color);
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.5);
             animation: pulse 2s infinite;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a;
+
+        .social-float.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            box-shadow: 0 4px 18px rgba(225, 48, 108, 0.5);
+        }
+
+        .social-float.tiktok {
+            background: #010101;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(0, 242, 254, 0.3);
         }
 
         @keyframes pulse {
@@ -501,21 +565,46 @@
 
         footer {
             background: #040507;
-            padding: 25px;
+            padding: 30px 25px;
             text-align: center;
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 13px;
             margin-top: 60px;
         }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .footer-socials a {
+            color: var(--text-muted);
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--flag-green);
+        }
     </style>
 </head>
 <body>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/359899999950" class="whatsapp-float" target="_blank" title="Свържете се с нас в WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- FLOATING SOCIAL MEDIA BUTTONS -->
+    <div class="floating-social-stack">
+        <a href="https://wa.me/359887907060" class="social-float whatsapp" target="_blank" title="Свържете се с нас в WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/gumi_nira_trans?dirf=aTVnZXB4ajA0dTVI" class="social-float instagram" target="_blank" title="Последвайте ни в Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@gumi_nira_trans" class="social-float tiktok" target="_blank" title="Последвайте ни в TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
 
     <header>
         <div class="header-container">
@@ -557,8 +646,8 @@
         <h1 data-i18n="hero_title">Качество и Надеждност с <span>NRG3</span></h1>
         <p data-i18n="hero_desc">Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.</p>
         <div class="btn-group">
-            <a href="#tires" class="btn btn-green" data-i18n="btn_tires">Гуми Регенерат</a>
-            <a href="#contacts" class="btn btn-red" data-i18n="btn_contact">Свържи се с нас</a>
+            <a href="#tires" class="btn btn-green" data-i18n="btn_tires"><i class="fa-solid fa-dharmachakra"></i> Гуми Регенерат</a>
+            <a href="#contacts" class="btn btn-red" data-i18n="btn_contact"><i class="fa-solid fa-envelope"></i> Свържи се с нас</a>
         </div>
     </section>
 
@@ -688,7 +777,7 @@
             <div class="contact-box">
                 <div class="contact-group">
                     <h4 data-i18n="cont_trans_h"><i class="fa-solid fa-truck"></i> Транспорт и Спедиция</h4>
-                    <p>Тел: <a href="tel:0899999950">0899 99 99 50</a></p>
+                    <p>Тел / WhatsApp: <a href="tel:0887907060">0887 90 70 60</a></p>
                     <p>Имейл: <a href="mailto:gumi_nira_trans@abv.bg">gumi_nira_trans@abv.bg</a></p>
                 </div>
                 <div class="contact-group">
@@ -701,6 +790,14 @@
                     <p data-i18n="cont_addr_p">гр. Варна, бул. "Владислав Варненчик" 281</p>
                     <p style="font-size:12px; color:var(--text-muted);" data-i18n="cont_time">Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.</p>
                 </div>
+                <div class="contact-group">
+                    <h4 data-i18n="cont_social_h"><i class="fa-solid fa-share-nodes"></i> Последвайте ни</h4>
+                    <div class="social-links-inline">
+                        <a href="https://wa.me/359887907060" class="social-btn-inline wa" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/gumi_nira_trans?dirf=aTVnZXB4ajA0dTVI" class="social-btn-inline ig" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@gumi_nira_trans" class="social-btn-inline tt" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
             </div>
 
             <div class="contact-box" style="text-align:center;">
@@ -708,13 +805,18 @@
                 <div class="qr-card">
                     <h5 style="font-size:16px;">Gumi Nira Trans</h5>
                     <p style="font-size:12px; color:#666; margin-bottom:10px;">WhatsApp Business</p>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/359899999950" alt="WhatsApp QR">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/359887907060" alt="WhatsApp QR">
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
+        <div class="footer-socials">
+            <a href="https://wa.me/359887907060" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/gumi_nira_trans?dirf=aTVnZXB4ajA0dTVI" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@gumi_nira_trans" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
         <p data-i18n="footer_text">&copy; 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД. Всички права запазени.</p>
     </footer>
 
@@ -762,7 +864,7 @@
                 about_p4: "Компанията представя продуктите на EVERSAFE от 2012 година и ги използва от 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.",
                 about_ece: "ЕН ЕР ДЖИ 3 ЕООД притежава ECE R109",
                 title_contacts: "Контакти",
-                cont_trans_h: "Транспорт и Спедиция", cont_tires_h: "Гуми и Регенерат", cont_addr_h: "Адрес",
+                cont_trans_h: "Транспорт и Спедиция", cont_tires_h: "Гуми и Регенерат", cont_addr_h: "Адрес", cont_social_h: "Последвайте ни",
                 cont_addr_p: "гр. Варна, бул. \"Владислав Варненчик\" 281", cont_time: "Пон - Пет: 08:30 - 17:30 ч. | Сб: 09:00 - 13:00 ч.",
                 whatsapp_title: "WhatsApp Чат", footer_text: "© 2026 ЕН ЕР ДЖИ 3 ЕООД & Гуми Нира Транс ЕООД. Всички права запазени."
             },
@@ -795,7 +897,7 @@
                 about_p4: "The company has presented EVERSAFE products since 2012 and has used them for 9 years. EVERSAFE treads are manufactured in Malaysia, focusing on technology to achieve a high-quality product sold worldwide.",
                 about_ece: "NRG 3 LTD holds ECE R109",
                 title_contacts: "Contacts",
-                cont_trans_h: "Transport & Forwarding", cont_tires_h: "Tires & Retreads", cont_addr_h: "Address",
+                cont_trans_h: "Transport & Forwarding", cont_tires_h: "Tires & Retreads", cont_addr_h: "Address", cont_social_h: "Follow Us",
                 cont_addr_p: "Varna, 281 Vladislav Varnenchik Blvd.", cont_time: "Mon - Fri: 08:30 - 17:30 | Sat: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 LTD & Gumi Nira Trans LTD. All rights reserved."
             },
@@ -828,7 +930,7 @@
                 about_p4: "Compania reprezintă produsele EVERSAFE din 2012 și le folosește de 9 ani. Benzile EVERSAFE sunt fabricate în Malaezia, producătorul concentrându-se pe tehnologie de vârf.",
                 about_ece: "NRG 3 SRL deține ECE R109",
                 title_contacts: "Contact",
-                cont_trans_h: "Transport și Expediție", cont_tires_h: "Anvelope și Resapate", cont_addr_h: "Adresă",
+                cont_trans_h: "Transport și Expediție", cont_tires_h: "Anvelope și Resapate", cont_addr_h: "Adresă", cont_social_h: "Urmăriți-ne",
                 cont_addr_p: "Varna, Bd. Vladislav Varnenchik nr. 281", cont_time: "Luni - Vin: 08:30 - 17:30 | Sâm: 09:00 - 13:00",
                 whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SRL & Gumi Nira Trans SRL. Toate drepturile rezervate."
             },
@@ -861,7 +963,7 @@
                 about_p4: "EVERSAFE-Produkte seit 2012 im Sortiment. Hergestellt in Malaysia.",
                 about_ece: "NRG 3 GmbH besitzt ECE R109",
                 title_contacts: "Kontakt",
-                cont_trans_h: "Transport & Spedition", cont_tires_h: "Reifen & Runderneuerung", cont_addr_h: "Adresse",
+                cont_trans_h: "Transport & Spedition", cont_tires_h: "Reifen & Runderneuerung", cont_addr_h: "Adresse", cont_social_h: "Folgen Sie uns",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Mo - Fr: 08:30 - 17:30 | Sa: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 GmbH & Gumi Nira Trans GmbH. Alle Rechte vorbehalten."
             },
@@ -894,7 +996,7 @@
                 about_p4: "Representamos productos EVERSAFE desde 2012. Fabricados en Malasia.",
                 about_ece: "NRG 3 S.R.L. posee ECE R109",
                 title_contacts: "Contacto",
-                cont_trans_h: "Transporte y Expedición", cont_tires_h: "Neumáticos y Recauchutados", cont_addr_h: "Dirección",
+                cont_trans_h: "Transporte y Expedición", cont_tires_h: "Neumáticos y Recauchutados", cont_addr_h: "Dirección", cont_social_h: "Síguenos",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Vie: 08:30 - 17:30 | Sáb: 09:00 - 13:00",
                 whatsapp_title: "Chat de WhatsApp", footer_text: "© 2026 NRG 3 S.R.L. & Gumi Nira Trans S.R.L. Todos los derechos reservados."
             },
@@ -927,7 +1029,7 @@
                 about_p4: "Prodotti EVERSAFE dal 2012, prodotti in Malaysia.",
                 about_ece: "NRG 3 SRL possiede ECE R109",
                 title_contacts: "Contatti",
-                cont_trans_h: "Trasporti e Spedizioni", cont_tires_h: "Pneumatici e Ricoperti", cont_addr_h: "Indirizzo",
+                cont_trans_h: "Trasporti e Spedizioni", cont_tires_h: "Pneumatici e Ricoperti", cont_addr_h: "Indirizzo", cont_social_h: "Seguici",
                 cont_addr_p: "Varna, Viale Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sab: 09:00 - 13:00",
                 whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SRL & Gumi Nira Trans SRL. Tutti i diritti riservati."
             },
@@ -960,7 +1062,7 @@
                 about_p4: "Produits EVERSAFE depuis 2012, fabriqués en Malaisie.",
                 about_ece: "NRG 3 SARL détient ECE R109",
                 title_contacts: "Contacts",
-                cont_trans_h: "Transport et Affrètement", cont_tires_h: "Pneus et Rechapés", cont_addr_h: "Adresse",
+                cont_trans_h: "Transport et Affrètement", cont_tires_h: "Pneus et Rechapés", cont_addr_h: "Adresse", cont_social_h: "Suivez-nous",
                 cont_addr_p: "Varna, Blvd. Vladislav Varnenchik 281", cont_time: "Lun - Ven: 08:30 - 17:30 | Sam: 09:00 - 13:00",
                 whatsapp_title: "Chat WhatsApp", footer_text: "© 2026 NRG 3 SARL & Gumi Nira Trans SARL. Tous droits réservés."
             },
@@ -984,7 +1086,7 @@
                 why_2_t: "Iskusan tim", why_2_d: "Profesionalni vozači i špediteri.",
                 why_3_t: "Fleksibilna rješenja", why_3_d: "Personalizirani pristup.",
                 why_4_t: "Konkurentne cijene", why_4_d: "Optimalan omjer cijene i kvalitete.",
-                why_5_t: "24/7 Podrška", why_5_d: "Stalna komunikაცია s klijentom.",
+                why_5_t: "24/7 Podrška", why_5_d: "Stalna komunikacija s klijentom.",
                 why_6_t: "GPS Praćenje", why_6_d: "Kontrola u stvarnom vremenu.",
                 title_about: "O Nama",
                 about_p1: "NRG 3 d.o.o. osnovan je 2014. godine i nasljednik je tvrtke Gumi Nira Trans d.o.o.",
@@ -993,7 +1095,7 @@
                 about_p4: "EVERSAFE proizvodi od 2012. godine, proizvedeni u Maleziji.",
                 about_ece: "NRG 3 d.o.o. posjeduje ECE R109",
                 title_contacts: "Kontakti",
-                cont_trans_h: "Transport i Otpremništvo", cont_tires_h: "Gume i Obnova", cont_addr_h: "Adresa",
+                cont_trans_h: "Transport i Otpremništvo", cont_tires_h: "Gume i Obnova", cont_addr_h: "Adresa", cont_social_h: "Pratite nas",
                 cont_addr_p: "Varna, Bulevar Vladislav Varnenchik 281", cont_time: "Pon - Pet: 08:30 - 17:30 | Sub: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Chat", footer_text: "© 2026 NRG 3 d.o.o. & Gumi Nira Trans d.o.o. Sva prava pridržana."
             },
@@ -1026,7 +1128,7 @@
                 about_p4: "2012 óta képviseljük az EVERSAFE termékeket. Malajziában készülnek.",
                 about_ece: "NRG 3 Kft. ECE R109 tanúsítvánnyal rendelkezik",
                 title_contacts: "Kapcsolat",
-                cont_trans_h: "Szállítás és Spedíció", cont_tires_h: "Gumiabroncsok és Futózás", cont_addr_h: "Cím",
+                cont_trans_h: "Szállítás és Spedíció", cont_tires_h: "Gumiabroncsok és Futózás", cont_addr_h: "Cím", cont_social_h: "Kövess minket",
                 cont_addr_p: "Várna, Vladislav Varnenchik sugárút 281.", cont_time: "Hét - Pén: 08:30 - 17:30 | Szo: 09:00 - 13:00",
                 whatsapp_title: "WhatsApp Csevegés", footer_text: "© 2026 NRG 3 Kft. & Gumi Nira Trans Kft. Minden jog fenntartva."
             }
