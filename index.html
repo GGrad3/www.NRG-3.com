@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<ю!DOCTYPE html>
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <style>
         :root {
             --bg-dark: #07090c;
-            --bg-card: #121824;
+            --bg-card: rgba(18, 24, 36, 0.92);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --flag-green: #00b07c;
@@ -43,7 +43,7 @@
             position: sticky;
             top: 0;
             width: 100%;
-            background: rgba(7, 9, 12, 0.85);
+            background: rgba(7, 9, 12, 0.88);
             backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
@@ -176,8 +176,8 @@
         /* HERO SECTION */
         .hero {
             padding: 140px 20px 100px 20px;
-            background: linear-gradient(rgba(7, 9, 12, 0.8), rgba(7, 9, 12, 0.95)), 
-                        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(7, 9, 12, 0.82), rgba(7, 9, 12, 0.95)), 
+                        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
             text-align: center;
         }
 
@@ -225,6 +225,15 @@
             transform: translateY(-3px); 
             box-shadow: 0 6px 20px var(--accent-glow); 
         }
+
+        .btn-wa { 
+            background: linear-gradient(135deg, var(--whatsapp-color), #1da851); 
+            color: white; 
+        }
+        .btn-wa:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); 
+        }
         
         .btn-red { 
             background: linear-gradient(135deg, var(--flag-red), #b32431); 
@@ -249,6 +258,7 @@
 
         .stat-card {
             background: var(--bg-card);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--border-color);
             padding: 25px;
             border-radius: 12px;
@@ -264,9 +274,32 @@
         .stat-card h3 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 5px; }
         .stat-card p { color: var(--text-muted); font-size: 14px; }
 
-        /* SECTIONS WITH FADE-IN ANIMATION */
+        /* SECTIONS WITH BACKGROUNDS AND FADE-IN ANIMATION */
+        .section-wrapper {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .wrapper-tires {
+            background-image: linear-gradient(rgba(7, 9, 12, 0.88), rgba(7, 9, 12, 0.92)), 
+                              url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=1920&auto=format&fit=crop');
+        }
+
+        .wrapper-transport {
+            background-image: linear-gradient(rgba(7, 9, 12, 0.88), rgba(7, 9, 12, 0.92)), 
+                              url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop');
+        }
+
+        .wrapper-about {
+            background-image: linear-gradient(rgba(7, 9, 12, 0.88), rgba(7, 9, 12, 0.92)), 
+                              url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop');
+        }
+
         section {
-            padding: 90px 20px 40px 20px;
+            padding: 90px 20px 70px 20px;
             max-width: 1200px;
             margin: 0 auto;
             opacity: 0;
@@ -303,6 +336,7 @@
 
         .tire-card {
             background: var(--bg-card);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 25px;
@@ -368,11 +402,13 @@
 
         .info-notice {
             background: var(--bg-card);
+            backdrop-filter: blur(8px);
             border-left: 4px solid var(--flag-green);
             padding: 25px;
             border-radius: 10px;
             margin-top: 40px;
             border: 1px solid var(--border-color);
+            border-left-width: 4px;
         }
 
         /* TRANSPORT SECTION */
@@ -385,6 +421,7 @@
 
         .transport-card {
             background: var(--bg-card);
+            backdrop-filter: blur(8px);
             padding: 25px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
@@ -407,6 +444,7 @@
 
         .country-box {
             background: var(--bg-card);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--border-color);
             padding: 14px;
             border-radius: 8px;
@@ -414,7 +452,7 @@
             font-weight: 600;
             transition: 0.3s;
         }
-        .country-box:hover { background: rgba(0,176,124,0.1); border-color: var(--flag-green); color: #00ffb3; }
+        .country-box:hover { background: rgba(0,176,124,0.15); border-color: var(--flag-green); color: #00ffb3; }
 
         .why-us-grid {
             display: grid;
@@ -425,16 +463,17 @@
 
         .why-us-item {
             background: var(--bg-card);
+            backdrop-filter: blur(8px);
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid var(--flag-green);
             border: 1px solid var(--border-color);
-            border-left-width: 4px;
+            border-left: 4px solid var(--flag-green);
         }
 
         /* ABOUT SECTION */
         .about-card {
             background: var(--bg-card);
+            backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 14px;
             border: 1px solid var(--border-color);
@@ -460,6 +499,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            margin-bottom: 40px;
         }
 
         .contact-box {
@@ -484,8 +524,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 10px;
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--border-color);
@@ -508,6 +548,21 @@
             max-width: 260px;
             margin: 0 auto;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        /* GOOGLE MAPS WRAPPER */
+        .map-container {
+            width: 100%;
+            height: 380px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* FLOATING SOCIAL MEDIA BUTTONS STACK */
@@ -570,7 +625,6 @@
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 13px;
-            margin-top: 60px;
         }
 
         .footer-socials {
@@ -595,7 +649,7 @@
 
     <!-- FLOATING SOCIAL MEDIA BUTTONS -->
     <div class="floating-social-stack">
-        <a href="https://wa.me/359887907060" class="social-float whatsapp" target="_blank" title="Свържете се с нас в WhatsApp">
+        <a href="https://wa.me/359884112356" class="social-float whatsapp" target="_blank" title="Свържете се с нас в WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
         <a href="https://www.instagram.com/gumi_nira_trans?dirf=aTVnZXB4ajA0dTVI" class="social-float instagram" target="_blank" title="Последвайте ни в Instagram">
@@ -647,7 +701,7 @@
         <p data-i18n="hero_desc">Производство на премиум регенерирани гуми за тежкотоварни автомобили и международен транспорт в цяла Европа.</p>
         <div class="btn-group">
             <a href="#tires" class="btn btn-green" data-i18n="btn_tires"><i class="fa-solid fa-dharmachakra"></i> Гуми Регенерат</a>
-            <a href="#contacts" class="btn btn-red" data-i18n="btn_contact"><i class="fa-solid fa-envelope"></i> Свържи се с нас</a>
+            <a href="https://wa.me/359884112356?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5,%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BC%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B7%D0%B0%20%D0%B2%D0%B0%D1%88%D0%B8%D1%82%D0%B5%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8" target="_blank" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp Бърза Връзка</a>
         </div>
     </section>
 
@@ -670,105 +724,115 @@
         </div>
     </div>
 
-    <section id="tires">
-        <div class="section-title">
-            <h2 data-i18n="title_tires">Гуми Регенерат</h2>
-        </div>
-        <div class="tires-grid">
-            <div class="tire-card">
-                <div>
-                    <h3>Модел DE2</h3>
-                    <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5</div>
-                    <div class="tire-img-container">
-                        <img src="De2nova.jpg" alt="Модел DE2">
+    <!-- TIRES SECTION -->
+    <div class="section-wrapper wrapper-tires">
+        <section id="tires">
+            <div class="section-title">
+                <h2 data-i18n="title_tires">Гуми Регенерат</h2>
+            </div>
+            <div class="tires-grid">
+                <div class="tire-card">
+                    <div>
+                        <h3>Модел DE2</h3>
+                        <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5</div>
+                        <div class="tire-img-container">
+                            <img src="De2nova.jpg" alt="Модел DE2">
+                        </div>
+                        <p data-i18n="tire_de2">Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.</p>
                     </div>
-                    <p data-i18n="tire_de2">Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.</p>
+                    <a href="https://wa.me/359884112356?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5,%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BC%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%82%D0%B2%D0%B0%D0%BD%D0%B5%20%D0%B7%D0%B0%20%D0%B3%D1%83%D0%BC%D0%B8%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%20DE2" target="_blank" class="btn btn-wa" data-i18n="btn_inquiry_de2"><i class="fa-brands fa-whatsapp"></i> Запитване в WhatsApp</a>
                 </div>
-                <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
-            </div>
-            <div class="tire-card">
-                <div>
-                    <h3>Модел DY3</h3>
-                    <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5 &nbsp;|&nbsp; 13R22.5</div>
-                    <div class="tire-img-container">
-                        <img src="DY3nova.jpg" alt="Модел DY3">
+                <div class="tire-card">
+                    <div>
+                        <h3>Модел DY3</h3>
+                        <div class="sizes-badge">315/70R22.5 &nbsp;|&nbsp; 315/80R22.5 &nbsp;|&nbsp; 13R22.5</div>
+                        <div class="tire-img-container">
+                            <img src="DY3nova.jpg" alt="Модел DY3">
+                        </div>
+                        <p data-i18n="tire_dy3">Смесен протектор (On/Off Road) за асфалт и строителни обекти.</p>
                     </div>
-                    <p data-i18n="tire_dy3">Смесен протектор (On/Off Road) за асфалт и строителни обекти.</p>
+                    <a href="https://wa.me/359884112356?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5,%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BC%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%82%D0%B2%D0%B0%D0%BD%D0%B5%20%D0%B7%D0%B0%20%D0%B3%D1%83%D0%BC%D0%B8%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%20DY3" target="_blank" class="btn btn-wa" data-i18n="btn_inquiry_dy3"><i class="fa-brands fa-whatsapp"></i> Запитване в WhatsApp</a>
                 </div>
-                <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
-            </div>
-            <div class="tire-card">
-                <div>
-                    <h3>Модел LU63</h3>
-                    <div class="sizes-badge">385/55R22.5 &nbsp;|&nbsp; 385/65R22.5</div>
-                    <div class="tire-img-container">
-                        <img src="LY63nova.jpg" alt="Модел LU63">
+                <div class="tire-card">
+                    <div>
+                        <h3>Модел LU63</h3>
+                        <div class="sizes-badge">385/55R22.5 &nbsp;|&nbsp; 385/65R22.5</div>
+                        <div class="tire-img-container">
+                            <img src="LY63nova.jpg" alt="Модел LU63">
+                        </div>
+                        <p data-i18n="tire_lu63">Протектор за ремаркета с ниско съпротивление и икономия на гориво.</p>
                     </div>
-                    <p data-i18n="tire_lu63">Протектор за ремаркета с ниско съпротивление и икономия на гориво.</p>
+                    <a href="https://wa.me/359884112356?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5,%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BC%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%82%D0%B2%D0%B0%D0%BD%D0%B5%20%D0%B7%D0%B0%20%D0%B3%D1%83%D0%BC%D0%B8%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%20LU63" target="_blank" class="btn btn-wa" data-i18n="btn_inquiry_lu63"><i class="fa-brands fa-whatsapp"></i> Запитване в WhatsApp</a>
                 </div>
-                <a href="#contacts" class="btn btn-green" data-i18n="btn_inquiry">Запитване</a>
             </div>
-        </div>
 
-        <div class="info-notice">
-            <h4 data-i18n="notice_title"><i class="fa-solid fa-circle-info" style="color:var(--flag-green);"></i> Търсите друг размер?</h4>
-            <p style="color:var(--text-muted);" data-i18n="notice_desc">Посочените модели са най-разпространените. ЕН ЕР ДЖИ 3 ЕООД произвежда и предлага много други шарки и размери при запитване.</p>
-        </div>
-    </section>
-
-    <section id="transport">
-        <div class="section-title">
-            <h2 data-i18n="title_transport">Транспорт и Спедиция</h2>
-        </div>
-        <div class="transport-grid">
-            <div class="transport-card">
-                <i class="fa-solid fa-truck-front"></i>
-                <h3 data-i18n="trans_ftl_title">Комплектни товари (FTL)</h3>
-                <p data-i18n="trans_ftl_desc">Бърз и директен международен транспорт на цели товари в Европа.</p>
+            <div class="info-notice">
+                <h4 data-i18n="notice_title"><i class="fa-solid fa-circle-info" style="color:var(--flag-green);"></i> Търсите друг размер?</h4>
+                <p style="color:var(--text-muted);" data-i18n="notice_desc">Посочените модели са най-разпространените. ЕН ЕР ДЖИ 3 ЕООД произвежда и предлага много други шарки и размери при запитване.</p>
             </div>
-            <div class="transport-card">
-                <i class="fa-solid fa-boxes-packing"></i>
-                <h3 data-i18n="trans_ltl_title">Групажни товари (LTL)</h3>
-                <p data-i18n="trans_ltl_desc">Икономични и гъвкави решения за редовни по-малки пратки.</p>
+        </section>
+    </div>
+
+    <!-- TRANSPORT SECTION -->
+    <div class="section-wrapper wrapper-transport">
+        <section id="transport">
+            <div class="section-title">
+                <h2 data-i18n="title_transport">Транспорт и Спедиция</h2>
             </div>
-        </div>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <i class="fa-solid fa-truck-front"></i>
+                    <h3 data-i18n="trans_ftl_title">Комплектни товари (FTL)</h3>
+                    <p data-i18n="trans_ftl_desc">Бърз и директен международен транспорт на цели товари в Европа.</p>
+                </div>
+                <div class="transport-card">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <h3 data-i18n="trans_ltl_title">Групажни товари (LTL)</h3>
+                    <p data-i18n="trans_ltl_desc">Икономични и гъвкави решения за редовни по-малки пратки.</p>
+                </div>
+            </div>
 
-        <h3 style="text-align:center; margin-bottom:15px;" data-i18n="relations_title">Обслужвани релации</h3>
-        <div class="countries-grid">
-            <div class="country-box">🇧🇬 <span data-i18n="c_bg">България</span></div>
-            <div class="country-box">🇷🇴 <span data-i18n="c_ro">Румъния</span></div>
-            <div class="country-box">🇩🇪 <span data-i18n="c_de">Германия</span></div>
-            <div class="country-box">🇪🇸 <span data-i18n="c_es">Испания</span></div>
-            <div class="country-box">🇮🇹 <span data-i18n="c_it">Италия</span></div>
-            <div class="country-box">🇫🇷 <span data-i18n="c_fr">Франция</span></div>
-            <div class="country-box">🇭🇷 <span data-i18n="c_hr">Хърватия</span></div>
-            <div class="country-box">🇭🇺 <span data-i18n="c_hu">Унгария</span></div>
-        </div>
+            <h3 style="text-align:center; margin-bottom:15px;" data-i18n="relations_title">Обслужвани релации</h3>
+            <div class="countries-grid">
+                <div class="country-box">🇧🇬 <span data-i18n="c_bg">България</span></div>
+                <div class="country-box">🇷🇴 <span data-i18n="c_ro">Румъния</span></div>
+                <div class="country-box">🇩🇪 <span data-i18n="c_de">Германия</span></div>
+                <div class="country-box">🇪🇸 <span data-i18n="c_es">Испания</span></div>
+                <div class="country-box">🇮🇹 <span data-i18n="c_it">Италия</span></div>
+                <div class="country-box">🇫🇷 <span data-i18n="c_fr">Франция</span></div>
+                <div class="country-box">🇭🇷 <span data-i18n="c_hr">Хърватия</span></div>
+                <div class="country-box">🇭🇺 <span data-i18n="c_hu">Унгария</span></div>
+            </div>
 
-        <div class="why-us-grid">
-            <div class="why-us-item"><strong data-i18n="why_1_t">Модерен автопарк</strong> - <span data-i18n="why_1_d">Екологични и поддържани камиони.</span></div>
-            <div class="why-us-item"><strong data-i18n="why_2_t">Опитен екип</strong> - <span data-i18n="why_2_d">Професионални шофьори и спедитори.</span></div>
-            <div class="why-us-item"><strong data-i18n="why_3_t">Гъвкави решения</strong> - <span data-i18n="why_3_d">Персонализиран подход.</span></div>
-            <div class="why-us-item"><strong data-i18n="why_4_t">Конкурентни цени</strong> - <span data-i18n="why_4_d">Оптимално съотношение цена/качество.</span></div>
-            <div class="why-us-item"><strong data-i18n="why_5_t">24/7 Поддръжка</strong> - <span data-i18n="why_5_d">Постоянна връзка с клиента.</span></div>
-            <div class="why-us-item"><strong data-i18n="why_6_t">GPS Проследяване</strong> - <span data-i18n="why_6_d">Контрол в реално време.</span></div>
-        </div>
-    </section>
+            <div class="why-us-grid">
+                <div class="why-us-item"><strong data-i18n="why_1_t">Модерен автопарк</strong> - <span data-i18n="why_1_d">Екологични и поддържани камиони.</span></div>
+                <div class="why-us-item"><strong data-i18n="why_2_t">Опитен екип</strong> - <span data-i18n="why_2_d">Професионални шофьори и спедитори.</span></div>
+                <div class="why-us-item"><strong data-i18n="why_3_t">Гъвкави решения</strong> - <span data-i18n="why_3_d">Персонализиран подход.</span></div>
+                <div class="why-us-item"><strong data-i18n="why_4_t">Конкурентни цени</strong> - <span data-i18n="why_4_d">Оптимално съотношение цена/качество.</span></div>
+                <div class="why-us-item"><strong data-i18n="why_5_t">24/7 Поддръжка</strong> - <span data-i18n="why_5_d">Постоянна връзка с клиента.</span></div>
+                <div class="why-us-item"><strong data-i18n="why_6_t">GPS Проследяване</strong> - <span data-i18n="why_6_d">Контрол в реално време.</span></div>
+            </div>
+        </section>
+    </div>
 
-    <section id="about">
-        <div class="section-title">
-            <h2 data-i18n="title_about">За Нас</h2>
-        </div>
-        <div class="about-card">
-            <p data-i18n="about_p1">Ен Ер Джи 3 ЕООД е основана през 2014 г. и е наследник на компанията Гуми Нира Транс ЕООД. Ние работим ръка за ръка с нашите клиенти като един интегриран бизнес партньор.</p>
-            <p data-i18n="about_p2">Ние имаме две бизнес направления - Гуми Нира Транс ЕООД, предлагаща транспортни и спедиторски услуги, осъществявайки транспорт до всички дестинации в Европа и ЕН ЕР ДЖИ 3 ЕООД, предлагаща широк асортимент от изработени регенерирани гуми.</p>
-            <p data-i18n="about_p3">Когато гумата се износи, собствениците на превозни средства имат избор - да я заменят с нова гума или с регенерирана гума, за да спестят парични средства и да избегнат отпадъка. Регенерираните гуми са щадящи за планетата.</p>
-            <p data-i18n="about_p4">Компанията представя продуктите на EVERSAFE от 2012 година и ги използва от 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.</p>
-            
-            <div class="badge-ece"><i class="fa-solid fa-award"></i> <span data-i18n="about_ece">ЕН ЕР ДЖИ 3 ЕООД притежава ECE R109</span></div>
-        </div>
-    </section>
+    <!-- ABOUT SECTION -->
+    <div class="section-wrapper wrapper-about">
+        <section id="about">
+            <div class="section-title">
+                <h2 data-i18n="title_about">За Нас</h2>
+            </div>
+            <div class="about-card">
+                <p data-i18n="about_p1">Ен Ер Джи 3 ЕООД е основана през 2014 г. и е наследник на компанията Гуми Нира Транс ЕООД. Ние работим ръка за ръка с нашите клиенти като един интегриран бизнес партньор.</p>
+                <p data-i18n="about_p2">Ние имаме две бизнес направления - Гуми Нира Транс ЕООД, предлагаща транспортни и спедиторски услуги, осъществявайки транспорт до всички дестинации в Европа и ЕН ЕР ДЖИ 3 ЕООД, предлагаща широк асортимент от изработени регенерирани гуми.</p>
+                <p data-i18n="about_p3">Когато гумата се износи, собствениците на превозни средства имат избор - да я заменят с нова гума или с регенерирана гума, за да спестят парични средства и да избегнат отпадъка. Регенерираните гуми са щадящи за планетата.</p>
+                <p data-i18n="about_p4">Компанията представя продуктите на EVERSAFE от 2012 година и ги използва от 9 години. Протекторите на EVERSAFE са произведени в Малайзия и производителят е съсредоточен над развитието на технологиите с цел постигането на висококачествен продукт, който се продава по целия свят.</p>
+                
+                <div class="badge-ece"><i class="fa-solid fa-award"></i> <span data-i18n="about_ece">ЕН ЕР ДЖИ 3 ЕООД притежава ECE R109</span></div>
+            </div>
+        </section>
+    </div>
 
+    <!-- CONTACTS SECTION WITH GOOGLE MAPS -->
     <section id="contacts">
         <div class="section-title">
             <h2 data-i18n="title_contacts">Контакти</h2>
@@ -777,7 +841,7 @@
             <div class="contact-box">
                 <div class="contact-group">
                     <h4 data-i18n="cont_trans_h"><i class="fa-solid fa-truck"></i> Транспорт и Спедиция</h4>
-                    <p>Тел / WhatsApp: <a href="tel:0887907060">0887 90 70 60</a></p>
+                    <p>Тел / WhatsApp: <a href="tel:0884112356">0884 11 23 56</a></p>
                     <p>Имейл: <a href="mailto:gumi_nira_trans@abv.bg">gumi_nira_trans@abv.bg</a></p>
                 </div>
                 <div class="contact-group">
@@ -793,7 +857,7 @@
                 <div class="contact-group">
                     <h4 data-i18n="cont_social_h"><i class="fa-solid fa-share-nodes"></i> Последвайте ни</h4>
                     <div class="social-links-inline">
-                        <a href="https://wa.me/359887907060" class="social-btn-inline wa" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://wa.me/359884112356" class="social-btn-inline wa" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/gumi_nira_trans?dirf=aTVnZXB4ajA0dTVI" class="social-btn-inline ig" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@gumi_nira_trans" class="social-btn-inline tt" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
@@ -805,15 +869,25 @@
                 <div class="qr-card">
                     <h5 style="font-size:16px;">Gumi Nira Trans</h5>
                     <p style="font-size:12px; color:#666; margin-bottom:10px;">WhatsApp Business</p>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/359887907060" alt="WhatsApp QR">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/359884112356" alt="WhatsApp QR">
                 </div>
             </div>
+        </div>
+
+        <!-- GOOGLE MAPS EMBED -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.568285573432!2d27.8682057!3d43.2185012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a453896568853b%3A0xb5b79e2c45168ba8!2z0LHQtdC7LiDigJLRktC70LDQtNC40YHQu9Cw0LIg0JLQsNGA0L3QtdC90YfQuNC64oCdIDI4MSwgOTAwOSDQktCw0YDQvdCw!5e0!3m2!1sbg!2sbg!4v1700000000000!5m2!1sbg!2sbg" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
     <footer>
         <div class="footer-socials">
-            <a href="https://wa.me/359887907060" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/359884112356" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="https://www.instagram.com/gumi_nira_trans?dirf=aTVnZXB4ajA0dTVI" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@gumi_nira_trans" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
@@ -844,7 +918,7 @@
                 tire_de2: "Задвижващ протектор с отлично сцепление за регионален и тежък транспорт.",
                 tire_dy3: "Смесен протектор (On/Off Road) за асфалт и строителни обекти.",
                 tire_lu63: "Протектор за ремаркета с ниско съпротивление и икономия на гориво.",
-                btn_inquiry: "Запитване",
+                btn_inquiry_de2: "Запитване в WhatsApp", btn_inquiry_dy3: "Запитване в WhatsApp", btn_inquiry_lu63: "Запитване в WhatsApp",
                 notice_title: "Търсите друг размер?", notice_desc: "Посочените модели са най-разпространените. ЕН ЕР ДЖИ 3 ЕООД произвежда и предлага много други шарки и размери при запитване.",
                 title_transport: "Транспорт и Спедиция",
                 trans_ftl_title: "Комплектни товари (FTL)", trans_ftl_desc: "Бърз и директен международен транспорт на цели товари в Европа.",
@@ -877,7 +951,7 @@
                 tire_de2: "Drive tread with excellent grip for regional and heavy transport.",
                 tire_dy3: "Mixed tread (On/Off Road) for asphalt and construction sites.",
                 tire_lu63: "Trailer tread with low rolling resistance and fuel economy.",
-                btn_inquiry: "Inquiry",
+                btn_inquiry_de2: "Inquire on WhatsApp", btn_inquiry_dy3: "Inquire on WhatsApp", btn_inquiry_lu63: "Inquire on WhatsApp",
                 notice_title: "Looking for another size?", notice_desc: "The listed models are the most common. NRG3 LTD produces and offers many other patterns and sizes upon request.",
                 title_transport: "Transport & Forwarding",
                 trans_ftl_title: "Full Truck Loads (FTL)", trans_ftl_desc: "Fast and direct international transport of full loads across Europe.",
@@ -910,7 +984,7 @@
                 tire_de2: "Profil de tracțiune cu aderență excelentă pentru transport regional și greu.",
                 tire_dy3: "Profil mixt (On/Off Road) pentru asfalt și șantiere de construcții.",
                 tire_lu63: "Profil pentru remorci cu rezistență redusă la rulare și economie de combustibil.",
-                btn_inquiry: "Cerere",
+                btn_inquiry_de2: "Solicitați pe WhatsApp", btn_inquiry_dy3: "Solicitați pe WhatsApp", btn_inquiry_lu63: "Solicitați pe WhatsApp",
                 notice_title: "Căutați altă dimensiune?", notice_desc: "Modelele enumerate sunt cele mai comune. NRG3 SRL produce și oferă multe alte modele și dimensiuni la cerere.",
                 title_transport: "Transport și Expediție",
                 trans_ftl_title: "Încărcături Complete (FTL)", trans_ftl_desc: "Transport internațional rapid și direct de încărcături complete în Europa.",
@@ -943,7 +1017,7 @@
                 tire_de2: "Antriebsprofil mit exzellentem Grip für Regional- und Schwertransport.",
                 tire_dy3: "Mischprofil (On/Off Road) für Asphalt und Baustellen.",
                 tire_lu63: "Anhängerprofil mit geringem Rollwiderstand und Kraftstoffeinsparung.",
-                btn_inquiry: "Anfrage",
+                btn_inquiry_de2: "Anfrage per WhatsApp", btn_inquiry_dy3: "Anfrage per WhatsApp", btn_inquiry_lu63: "Anfrage per WhatsApp",
                 notice_title: "Suchen Sie eine andere Größe?", notice_desc: "Die aufgeführten Modelle sind am häufigsten. NRG3 GmbH produziert und bietet auf Anfrage viele weitere Profile und Größen an.",
                 title_transport: "Transport & Spedition",
                 trans_ftl_title: "Komplettladungen (FTL)", trans_ftl_desc: "Schneller und direkter internationaler Transport von Komplettladungen in Europa.",
@@ -976,7 +1050,7 @@
                 tire_de2: "Banda de tracción con excelente agarre para transporte regional y pesado.",
                 tire_dy3: "Banda mixta (On/Off Road) para asfalto y obras de construcción.",
                 tire_lu63: "Banda para remolques con baja resistencia a la rodadura y ahorro de combustible.",
-                btn_inquiry: "Consulta",
+                btn_inquiry_de2: "Consulta por WhatsApp", btn_inquiry_dy3: "Consulta por WhatsApp", btn_inquiry_lu63: "Consulta por WhatsApp",
                 notice_title: "¿Busca otra medida?", notice_desc: "Los modelos listados son los más comunes. NRG3 S.R.L. produce y ofrece muchos otros diseños y medidas bajo pedido.",
                 title_transport: "Transporte y Expedición",
                 trans_ftl_title: "Cargas Completas (FTL)", trans_ftl_desc: "Transporte internacional rápido y directo de cargas completas en Europa.",
@@ -1009,7 +1083,7 @@
                 tire_de2: "Battistrada di trazione con eccellente aderenza per trasporti regionali e pesanti.",
                 tire_dy3: "Battistrada misto (On/Off Road) per asfalto e cantieri edili.",
                 tire_lu63: "Battistrada per rimorchi a bassa resistenza al rotolamento e risparmio di carburante.",
-                btn_inquiry: "Richiesta",
+                btn_inquiry_de2: "Richiedi su WhatsApp", btn_inquiry_dy3: "Richiedi su WhatsApp", btn_inquiry_lu63: "Richiedi su WhatsApp",
                 notice_title: "Cerchi un'altra misura?", notice_desc: "I modelli elencati sono i più comuni. NRG3 SRL produce e offre molti altri disegni e misure su richiesta.",
                 title_transport: "Trasporti e Spedizioni",
                 trans_ftl_title: "Carichi Completi (FTL)", trans_ftl_desc: "Trasporto internazionale rapido e diretto di carichi completi in Europa.",
@@ -1042,7 +1116,7 @@
                 tire_de2: "Bande de roulement motrice avec excellente adhérence pour transport régional et lourd.",
                 tire_dy3: "Bande mixte (On/Off Road) pour asphalte et chantiers de construction.",
                 tire_lu63: "Bande pour remorques à faible résistance au roulement et économie de carburant.",
-                btn_inquiry: "Demande",
+                btn_inquiry_de2: "Demander sur WhatsApp", btn_inquiry_dy3: "Demander sur WhatsApp", btn_inquiry_lu63: "Demander sur WhatsApp",
                 notice_title: "Vous cherchez une autre taille ?", notice_desc: "Les modèles listés sont les plus courants. NRG3 SARL produit et propose de nombreux autres profils et tailles sur demande.",
                 title_transport: "Transport et Affrètement",
                 trans_ftl_title: "Lots Complets (FTL)", trans_ftl_desc: "Transport international rapide et direct de charges complètes en Europa.",
@@ -1075,7 +1149,7 @@
                 tire_de2: "Pogonski gazni sloj s odličnim prianjanjem za regionalni i teški transport.",
                 tire_dy3: "Mješoviti gazni sloj (On/Off Road) za asfalt i gradilišta.",
                 tire_lu63: "Gazni sloj za prikolice s niskim otporom kotrljanja i uštedom goriva.",
-                btn_inquiry: "Upit",
+                btn_inquiry_de2: "Upit na WhatsApp", btn_inquiry_dy3: "Upit na WhatsApp", btn_inquiry_lu63: "Upit na WhatsApp",
                 notice_title: "Tražite li drugu dimenziju?", notice_desc: "Navedeni modeli su najčešći. NRG3 d.o.o. proizvodi i nudi mnoge druge uzorke i dimenzije na upit.",
                 title_transport: "Transport i Otpremništvo",
                 trans_ftl_title: "Kompletni utovari (FTL)", trans_ftl_desc: "Brz i izravan međunarodni transport cijelih utovara u Europi.",
@@ -1108,7 +1182,7 @@
                 tire_de2: "Meghajtó mintázat kiváló tapadással regionális és nehéz szállításra.",
                 tire_dy3: "Vegyes mintázat (On/Off Road) aszfalthoz és építkezésekhez.",
                 tire_lu63: "Pótkocsi mintázat alacsony gördülési ellenállással és üzemanyag-megtakarítással.",
-                btn_inquiry: "Érdeklődés",
+                btn_inquiry_de2: "Érdeklődés WhatsApp-on", btn_inquiry_dy3: "Érdeklődés WhatsApp-on", btn_inquiry_lu63: "Érdeklődés WhatsApp-on",
                 notice_title: "Más méretet keres?", notice_desc: "A felsorolt modellek a legelterjedtebbek. Az NRG3 Kft. kérésre sok más mintát és méretet is gyárt és kínál.",
                 title_transport: "Szállítás és Spedíció",
                 trans_ftl_title: "Komplett rakományok (FTL)", trans_ftl_desc: "Gyors és közvetlen nemzetközi szállítás komplett rakományokkal Európában.",
